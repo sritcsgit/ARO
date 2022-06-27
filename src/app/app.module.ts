@@ -9,6 +9,8 @@ import { MasterDataComponent } from './modules/master-data/master-data.component
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { AdminComponent } from './modules/admin/admin.component';
 import { ProcessComponent } from './modules/process/process.component';
+import { TransactionComponent } from './modules/transaction/transaction.component';
+import { ConfigurationComponent } from './modules/configuration/configuration.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { ProcessComponent } from './modules/process/process.component';
     DashboardComponent,
     AdminComponent,
     ProcessComponent,
+    TransactionComponent,
+    ConfigurationComponent,
     
   ],
   imports: [
