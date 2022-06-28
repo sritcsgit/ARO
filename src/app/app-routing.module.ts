@@ -11,6 +11,10 @@ import { StoreMasterComponent } from './modules/master-data/store-master/store-m
 import { StoreSupplierMasterComponent } from './modules/master-data/store-supplier-master/store-supplier-master.component';
 import { SupplierMasterComponent } from './modules/master-data/supplier-master/supplier-master.component';
 import { ProcessComponent } from './modules/process/process.component';
+import { NewItemLaunchDateComponent } from './modules/transaction/new-item-launch-date/new-item-launch-date.component';
+import { PhaseOutItemsComponent } from './modules/transaction/phase-out-items/phase-out-items.component';
+import { PriceMarkdownComponent } from './modules/transaction/price-markdown/price-markdown.component';
+import { StoreStoreTransferComponent } from './modules/transaction/store-store-transfer/store-store-transfer.component';
 import { TransactionComponent } from './modules/transaction/transaction.component';
 
 
@@ -23,11 +27,18 @@ const routes: Routes = [
   { path: 'transaction', component:TransactionComponent},
   { path: 'admin', component:AdminComponent},
   { path: 'systemConfig', component:SystemconfigComponent},
+ 
   { path: 'productmaster', component:ProductMasterComponent},
   { path: 'storemaster', component:StoreMasterComponent},
   { path: 'distributionmaster', component:DistributionCenterComponent},
   { path: 'suppliermaster', component:SupplierMasterComponent},
   { path: 'storesupplymaster', component:StoreSupplierMasterComponent},
+
+  { path: 'pricemarkdown', component:PriceMarkdownComponent},
+  { path: 'phaseoutitem', component:PhaseOutItemsComponent},
+  { path: 'newlauchitem', component:NewItemLaunchDateComponent},
+  { path: 'store2storetransfer', component:StoreStoreTransferComponent},
+  
 
   
   {
