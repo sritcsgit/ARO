@@ -1,1 +1,224 @@
-<p>scheduling-config works!</p>
+
+
+<!-- partial -->
+<div class="container-fluid page-body-wrapper">
+    <div class="main-panel container">
+      <div class="content-wrapper pb-0">
+        
+        <!-- first row starts here -->
+       
+        <div class="row">
+          <div class="header-right d-flex  mt-md-2 mt-lg-0 w-100">
+            <div class="d-flex align-items-center">
+              <a href="#">
+                <p class="m-0 pe-3">Configuration</p>
+              </a>
+              <a class="ps-3 me-4" href="#">
+                <p class="m-0">Scheduling</p>
+              </a>
+            </div>
+            <!-- <div class="float-right" style="flex-direction: row-reverse;">
+              <button type="button" class=" btn btn-primary mt-2 mt-sm-0 btn-icon-text">
+                <i class="mdi mdi-plus-circle"></i> Add Prodcut </button>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="col-lg-12 p-0 grid-margin stretch-card mt-3">
+          <div class="card">
+            <div class="card-body pb-5">
+
+              <div class="mb-3">
+                <h3 class="d-inline-block"> Scheduling  </h3>
+                
+              </div>
+              
+              <div class="clearfix"></div>
+
+
+              
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"> Job Schedule tracker </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Job Schedule Config </a>
+                </li>
+               
+              </ul><!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                  <div class="clearfix"></div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Job  Name </th>
+                          <th>Job Stat</th>
+                          <th>Job end</th>
+                          <th>Status </th>
+                          <th>Actions</th>
+                        </tr>
+                        <tr>
+                          <th> <input type="text" class="form-control form-control-sm" > </th>
+                          <th> <input type="text" class="form-control form-control-sm" > </th>
+                          <th> <input type="text" class="form-control form-control-sm" > </th>
+                          <th> <input type="text" class="form-control form-control-sm" > </th>
+                          <th> <input type="text" class="form-control form-control-sm" > </th>
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td> Hyper-V Backup Job</td>
+                        <td> 21-06-2022 23:55:59</td>
+                        <td> 21-06-2022 11:55:59</td>
+                        <td> <i class="mdi mdi-check-circle-outline text-success"> </i> Success</td>
+                        <td> <span class="btn btn-sm btn-danger d-inline-block"> Restart </span></td>
+                      </tr>
+
+                      <tr>
+                        <td> VMware - Biz dev server</td>
+                        <td> 22-06-2022 1:30:00</td>
+                        <td> 22-06-2022 3:00:00</td>
+                        <td> <i class="mdi mdi-check-circle-outline text-success"> </i> Success</td>
+                        <td> <span class="btn btn-sm btn-danger d-inline-block"> Restart </span></td>
+                      </tr>
+
+                      <tr>
+                        <td> Hyper-V Backup Job</td>
+                        <td> 22-06-2022 23:55:59</td>
+                        <td> 22-06-2022 11:55:59</td>
+                        <td> <i class="mdi mdi-check-circle-outline text-success"> </i> Success</td>
+                        <td> <span class="btn btn-sm btn-danger d-inline-block"> Restart </span></td>
+                      </tr>
+                      <tr>
+                        <td> Hyper-V Backup Job</td>
+                        <td> 23-06-2022 23:55:59</td>
+                        <td> 23-06-2022 11:55:59</td>
+                        <td> <i class="mdi mdi-check-circle-outline text-warning"> </i> Pending</td>
+                        <td> <span class="btn btn-sm btn-danger d-inline-block"> Restart </span></td>
+                      </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                
+                <div class="tab-pane" id="tabs-2" role="tabpanel">
+                 
+                  <div class="left-tabs pt-5 pl-3 pb-5" role="tabpanel">
+                    <ul class="nav nav-tabs nav-tabs-left" role="tablist">
+                        <li role="presentation" class="nav-item">
+                          <a class="nav-link" href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab" aria-selected="false">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" /> Daily </label>
+                          </a>
+                        </li>
+                        <li role="presentation" class="nav-item">
+                          <a class="nav-link" href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="tab">
+                            <label class="form-check-label" >
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2"  /> Weekly </label>
+                          </a>
+                        </li>
+                        <li role="presentation" class="nav-item">
+                          <a class="nav-link" href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="tab">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios2" id="optionsRadios3" value="option3"  /> Monthly </label>
+                          </a>
+                        </li>
+                        
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-1" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                  
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" checked value="option1"  /> &nbsp;  Every  </label>  &nbsp;
+                                    <input type="text" class="form-control" style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;" value="1" /> Day's &nbsp;
+                                    <input type="text" class="form-control" style="width: 90px; display: inline-block; padding: 3px 10px; height: 34px;" value="1:30 AM" />
+                                </div>
+                            </div> <br> <br>
+                        </div>
+                        <div class="tab-pane" id="tab-2" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                  <h6 style="margin-left: -20px;"> 
+                                 <span> Recur every </span> &nbsp; <input type="text" class="form-control" style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;" value="1" /> &nbsp; Week &nbsp;
+                                 <input type="text" class="form-control" style="width: 90px; display: inline-block; padding: 3px 10px; height: 34px;" value="1:30 AM" />
+                                  </h6>
+                                 
+                                  <div class="row ">
+                                  
+                                    <div class="col-md-3 mb-3">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" checked /> Sunday </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input"  /> Monday </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input"  /> Tuesday </label>
+                                      </div>
+                                      <div class="col-md-3">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input"   /> Wednessday </label>
+                                      </div>
+                                      <div class="col-md-3 ">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" /> Thursday </label>
+                                      </div>
+                                      <div class="col-md-3">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input"  /> Friday </label>
+                                      </div>
+                                      <div class="col-md-3">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input"  /> Saturday </label>
+                                      </div>
+                                      
+                                    
+
+                                  </div>
+                                </div> <br> <br>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-3" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                  <input type="radio" class="form-check-input mt-2" name="optionsRadios2" id="optionsRadios2" checked value="option1" /> Day   &nbsp; &nbsp; 
+                                  <input type="text" class="form-control" style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;" value="21" />&nbsp; 
+                                  <input type="text" class="form-control" style="width: 90px; display: inline-block; padding: 3px 10px; height: 34px;" value="1:30 AM" /> &nbsp; of every  &nbsp;
+                                    <input type="text" class="form-control" style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;" value="1" />  Month(s)
+                                </div>
+                            </div>
+                        </div><br> <br>
+                        
+                    </div>
+                </div> 
+                <div class="pb-5"> <button type="button" class="btn btn-primary offset-md-2"> Save </button> </div>
+                
+
+                </div>
+
+                
+              </div>
+
+                
+              </div>
+              
+            
+            </div>
+          </div>
+        </div>
+        
+        
+
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->

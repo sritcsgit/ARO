@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-configuration',
@@ -6,14 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./configuration.component.css']
 })
 export class ConfigurationComponent implements OnInit {
+  
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
   systemConfigClick(){
     alert('hi');
+    this.router.navigate(['/systemConfig']);
+  }
+  storeTransferClick(){
+    this.router.navigate(['/storeTransfer']);
+  }
+  schedulingClick(){
+    this.router.navigate(['/scheduling']);
   }
 
 }

@@ -12,4 +12,7 @@ export class SystemconfigComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkall(){
+    
+  }
 }

@@ -15,6 +15,15 @@ import { SystemconfigComponent } from './modules/configuration/systemconfig/syst
 import { StoreStoreTransferConfigComponent } from './modules/configuration/store-store-transfer-config/store-store-transfer-config.component';
 import { SchedulingConfigComponent } from './modules/configuration/scheduling-config/scheduling-config.component';
 import { ConfigurationModule } from './modules/configuration/configuration.module';
+import { ProductMasterComponent } from './modules/master-data/product-master/product-master.component';
+import { StoreMasterComponent } from './modules/master-data/store-master/store-master.component';
+import { DistributionCenterComponent } from './modules/master-data/distribution-center/distribution-center.component';
+import { SupplierMasterComponent } from './modules/master-data/supplier-master/supplier-master.component';
+import { StoreSupplierMasterComponent } from './modules/master-data/store-supplier-master/store-supplier-master.component';
+import { PriceMarkdownComponent } from './modules/transaction/price-markdown/price-markdown.component';
+import { PhaseOutItemsComponent } from './modules/transaction/phase-out-items/phase-out-items.component';
+import { NewItemLaunchDateComponent } from './modules/transaction/new-item-launch-date/new-item-launch-date.component';
+import { StoreStoreTransferComponent } from './modules/transaction/store-store-transfer/store-store-transfer.component';
 
 
 
@@ -28,6 +37,15 @@ import { ConfigurationModule } from './modules/configuration/configuration.modul
     AdminComponent,
     ProcessComponent,
     TransactionComponent,
+    ProductMasterComponent,
+    StoreMasterComponent,
+    DistributionCenterComponent,
+    SupplierMasterComponent,
+    StoreSupplierMasterComponent,
+    PriceMarkdownComponent,
+    PhaseOutItemsComponent,
+    NewItemLaunchDateComponent,
+    StoreStoreTransferComponent,
     // ConfigurationComponent,
     // SystemconfigComponent,
     // StoreStoreTransferConfigComponent,
