@@ -11,6 +11,11 @@ import { AdminComponent } from './modules/admin/admin.component';
 import { ProcessComponent } from './modules/process/process.component';
 import { TransactionComponent } from './modules/transaction/transaction.component';
 import { ConfigurationComponent } from './modules/configuration/configuration.component';
+import { SystemconfigComponent } from './modules/configuration/systemconfig/systemconfig.component';
+import { StoreStoreTransferConfigComponent } from './modules/configuration/store-store-transfer-config/store-store-transfer-config.component';
+import { SchedulingConfigComponent } from './modules/configuration/scheduling-config/scheduling-config.component';
+import { ConfigurationModule } from './modules/configuration/configuration.module';
+
 
 
 @NgModule({
@@ -23,12 +28,16 @@ import { ConfigurationComponent } from './modules/configuration/configuration.co
     AdminComponent,
     ProcessComponent,
     TransactionComponent,
-    ConfigurationComponent,
+    // ConfigurationComponent,
+    // SystemconfigComponent,
+    // StoreStoreTransferConfigComponent,
+    // SchedulingConfigComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ConfigurationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

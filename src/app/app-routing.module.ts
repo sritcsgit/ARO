@@ -16,7 +16,13 @@ const routes: Routes = [
   { path: 'process', component:ProcessComponent},
   { path: 'transaction', component:TransactionComponent},
   { path: 'admin', component:AdminComponent},
-  { path: 'configurations', component:ConfigurationComponent}
+ 
+  
+  {
+    path: 'configurations',
+    loadChildren: () =>
+      import('./modules/configuration/configuration.module').then((m) => m.ConfigurationModule)
+  }
 
 ];
 
