@@ -76,8 +76,12 @@ background: linear-gradient(to right, #E9E4F0, #D3CCE3);
 .master-data .color-card:hover{ opacity: 0.75;}
 .page-body-wrapper { margin-top: 20px;}
 
+.master-data div a { cursor: pointer;}
 
-
+.form-control-sm {
+  height: calc(1.5em + 0.5rem + 2px);
+  padding: 0.25rem 1rem;
+}
 
 .nav-tabs-left {
     float: left;

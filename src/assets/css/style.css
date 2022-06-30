@@ -10908,7 +10908,9 @@ code {
 .main-panel .content-wrapper .header-right a {
   color: #313131;
   text-decoration: none;
-  font-weight: 700; }
+  font-weight: 700; 
+  display: inline-block;
+}
   .main-panel .content-wrapper .header-right a:first-child {
     border-right: 2px solid #313131; }
     .rtl .main-panel .content-wrapper .header-right a:first-child {
@@ -10932,7 +10934,7 @@ code {
   .rtl .main-panel .content-wrapper .header-right .btn-icon-text {
     padding: 0 0 0 19px; }
   .main-panel .content-wrapper .header-right .btn-icon-text i {
-    padding: 7px;
+    padding: 4px;
     display: inline-block;
     background: #069962;
     margin-right: 15px;
@@ -11414,7 +11416,7 @@ code {
     .btn, .ajax-upload-dragdrop .ajax-file-upload {
       font-size: 9px; } }
   .btn i, .ajax-upload-dragdrop .ajax-file-upload i {
-    font-size: 20px; }
+    font-size: 15px; }
   .btn.btn-rounded, .ajax-upload-dragdrop .btn-rounded.ajax-file-upload {
     border-radius: 50px; }
   .btn.btn-fw, .ajax-upload-dragdrop .btn-fw.ajax-file-upload {

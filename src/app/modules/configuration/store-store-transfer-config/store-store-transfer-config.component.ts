@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-store-store-transfer-config',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreStoreTransferConfigComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
-
+  backButtonClick(){
+    this.router.navigate(['configurations']);
+  }
 }

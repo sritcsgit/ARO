@@ -30,4 +30,7 @@ export class TransactionComponent implements OnInit {
     //alert('hi');
     this.router.navigate(['/store2storetransfer']);
   }
+  backButtonClick(){
+    this.router.navigate(['transaction']);
+  }
 }

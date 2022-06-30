@@ -8,8 +8,8 @@
         <!-- first row starts here -->
        
         <div class="row">
-          <div class="header-right d-flex  mt-md-2 mt-lg-0 w-100">
-            <div class="d-flex align-items-center">
+          <div class="header-right mt-md-2 mt-lg-0 w-100">
+            <div class=" align-items-center d-inline-block">
               <a href="#">
                 <p class="m-0 pe-3">Configuration</p>
               </a>
@@ -17,10 +17,10 @@
                 <p class="m-0">Scheduling</p>
               </a>
             </div>
-            <!-- <div class="float-right" style="flex-direction: row-reverse;">
-              <button type="button" class=" btn btn-primary mt-2 mt-sm-0 btn-icon-text">
-                <i class="mdi mdi-plus-circle"></i> Add Prodcut </button>
-            </div> -->
+            <div class=""  style="display: inline-block;  float: right;">
+                  <button type="button" (click)="backButtonClick()" class=" btn btn-sm btn-success btn-icon-text" style="height:30px">
+                    <i class="mdi mdi-arrow-left"></i> Back</button>
+                </div>
           </div>
         </div>
 
@@ -108,6 +108,21 @@
                 
                 <div class="tab-pane" id="tabs-2" role="tabpanel">
                  
+                  <div class="job-list">
+                    <div class="">
+                      <div class="row mt-3">
+                        <label for="exampleFormControlSelect3" class="col-md-2 form-inline">Job Name </label>
+                        <select class="form-control form-control-sm col-md-4"  id="exampleFormControlSelect1">
+                          <option>Hyper-V Backup Job </option>
+                          <option>VMware - Biz dev server </option>
+                          <option>Hyper-V Backup Job</option>
+                          <option>Store Name3</option>
+  
+                        </select>
+                      
+                      </div>
+                    </div>
+                  </div>
                   <div class="left-tabs pt-5 pl-3 pb-5" role="tabpanel">
                     <ul class="nav nav-tabs nav-tabs-left" role="tablist">
                         <li role="presentation" class="nav-item">
