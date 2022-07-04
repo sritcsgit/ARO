@@ -29,6 +29,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { VendorManagedInventoryComponent } from './modules/transaction/vendor-managed-inventory/vendor-managed-inventory.component';
+
+
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { MatTableModule } from '@angular/material/table';
     NewItemLaunchDateComponent,
     StoreStoreTransferComponent,
     // FormsModule
+    VendorManagedInventoryComponent,
     // ConfigurationComponent,
     // SystemconfigComponent,
     // StoreStoreTransferConfigComponent,
