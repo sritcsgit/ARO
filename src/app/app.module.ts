@@ -24,6 +24,7 @@ import { PriceMarkdownComponent } from './modules/transaction/price-markdown/pri
 import { PhaseOutItemsComponent } from './modules/transaction/phase-out-items/phase-out-items.component';
 import { NewItemLaunchDateComponent } from './modules/transaction/new-item-launch-date/new-item-launch-date.component';
 import { StoreStoreTransferComponent } from './modules/transaction/store-store-transfer/store-store-transfer.component';
+import { VendorManagedInventoryComponent } from './modules/transaction/vendor-managed-inventory/vendor-managed-inventory.component';
 
 
 
@@ -46,6 +47,7 @@ import { StoreStoreTransferComponent } from './modules/transaction/store-store-t
     PhaseOutItemsComponent,
     NewItemLaunchDateComponent,
     StoreStoreTransferComponent,
+    VendorManagedInventoryComponent,
     // ConfigurationComponent,
     // SystemconfigComponent,
     // StoreStoreTransferConfigComponent,

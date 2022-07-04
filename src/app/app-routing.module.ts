@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './modules/admin/admin.component';
 import { ConfigurationComponent } from './modules/configuration/configuration.component';
@@ -16,6 +16,7 @@ import { PhaseOutItemsComponent } from './modules/transaction/phase-out-items/ph
 import { PriceMarkdownComponent } from './modules/transaction/price-markdown/price-markdown.component';
 import { StoreStoreTransferComponent } from './modules/transaction/store-store-transfer/store-store-transfer.component';
 import { TransactionComponent } from './modules/transaction/transaction.component';
+import { VendorManagedInventoryComponent } from './modules/transaction/vendor-managed-inventory/vendor-managed-inventory.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,7 @@ const routes: Routes = [
   { path: 'phaseoutitem', component:PhaseOutItemsComponent},
   { path: 'newlauchitem', component:NewItemLaunchDateComponent},
   { path: 'store2storetransfer', component:StoreStoreTransferComponent},
-  
+  { path: 'vendormanagedinventory', component:VendorManagedInventoryComponent},
 
   
   {

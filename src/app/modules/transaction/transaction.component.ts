@@ -33,4 +33,7 @@ export class TransactionComponent implements OnInit {
   backButtonClick(){
     this.router.navigate(['transaction']);
   }
+  vendorManagedInventory(){
+    this.router.navigate(['vendormanagedinventory'])
+  }
 }
