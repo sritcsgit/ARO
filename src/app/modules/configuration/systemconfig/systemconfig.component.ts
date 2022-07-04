@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-systemconfig',
@@ -8,15 +7,12 @@ import { Router } from '@angular/router';
 })
 export class SystemconfigComponent implements OnInit {
 
-  constructor(
-    private router: Router,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  checkall(){}
-  backButtonClick(){
-    this.router.navigate(['configurations']);
+  checkall(){
+    
   }
 }

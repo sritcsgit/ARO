@@ -24,8 +24,11 @@ import { PriceMarkdownComponent } from './modules/transaction/price-markdown/pri
 import { PhaseOutItemsComponent } from './modules/transaction/phase-out-items/phase-out-items.component';
 import { NewItemLaunchDateComponent } from './modules/transaction/new-item-launch-date/new-item-launch-date.component';
 import { StoreStoreTransferComponent } from './modules/transaction/store-store-transfer/store-store-transfer.component';
-
-
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { StoreStoreTransferComponent } from './modules/transaction/store-store-t
     PhaseOutItemsComponent,
     NewItemLaunchDateComponent,
     StoreStoreTransferComponent,
+    // FormsModule
     // ConfigurationComponent,
     // SystemconfigComponent,
     // StoreStoreTransferConfigComponent,
@@ -53,9 +57,15 @@ import { StoreStoreTransferComponent } from './modules/transaction/store-store-t
     
   ],
   imports: [
+  
     BrowserModule,
     AppRoutingModule,
-    ConfigurationModule
+    ConfigurationModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

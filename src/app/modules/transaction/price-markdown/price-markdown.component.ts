@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-price-markdown',
@@ -8,13 +7,9 @@ import { Router } from '@angular/router';
 })
 export class PriceMarkdownComponent implements OnInit {
 
-  constructor(
-    private router: Router,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-  backButtonClick(){
-    this.router.navigate(['transaction']);
-  }
+
 }

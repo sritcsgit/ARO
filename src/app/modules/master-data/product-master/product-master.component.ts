@@ -10,12 +10,12 @@ export class ProductMasterComponent implements OnInit {
 
   constructor(
     private router: Router,
-  ) { }
+  ) 
+  { }
 
   ngOnInit(): void {
   }
-  backButtonClick(){
-    this.router.navigate(['masters']);
-  }
-}
 
+  
+
+}
