@@ -17,7 +17,6 @@ export class ConfigurationComponent implements OnInit {
   }
 
   systemConfigClick(){
-    alert('hi');
     this.router.navigate(['/systemConfig']);
   }
   storeTransferClick(){

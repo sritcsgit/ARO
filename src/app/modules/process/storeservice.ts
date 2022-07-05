@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Stores } from './stores';
 import { from, Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
-  envurl: string = 'http://localhost:5001/';
+  envurl: string = environment.url;
   searchStoreUrl: string = 'search-store';
   updateQtyUrl: string = 'update-quantity';
 
