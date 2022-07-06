@@ -32,3 +32,4 @@ import { SystemconfigComponent } from './systemconfig/systemconfig.component';
 
 })
 export class ConfigurationModule { }
+

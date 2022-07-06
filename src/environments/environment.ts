@@ -8,6 +8,7 @@ export const environment = {
   url: 'http://54.179.68.250:5001/'
 };
 
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
