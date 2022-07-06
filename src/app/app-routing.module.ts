@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './modules/admin/admin.component';
 import { ConfigurationComponent } from './modules/configuration/configuration.component';
+import { ForecastedConfigComponent } from './modules/configuration/forecasted-config/forecasted-config.component';
 import { SystemconfigComponent } from './modules/configuration/systemconfig/systemconfig.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DistributionCenterComponent } from './modules/master-data/distribution-center/distribution-center.component';
@@ -13,7 +14,10 @@ import { SupplierMasterComponent } from './modules/master-data/supplier-master/s
 import { ProcessComponent } from './modules/process/process.component';
 import { NewItemLaunchDateComponent } from './modules/transaction/new-item-launch-date/new-item-launch-date.component';
 import { PhaseOutItemsComponent } from './modules/transaction/phase-out-items/phase-out-items.component';
+import { PosSaleComponent } from './modules/transaction/pos-sale/pos-sale.component';
 import { PriceMarkdownComponent } from './modules/transaction/price-markdown/price-markdown.component';
+import { PromotionDetailsComponent } from './modules/transaction/promotion-details/promotion-details.component';
+import { StockRegisterComponent } from './modules/transaction/stock-register/stock-register.component';
 import { StoreStoreTransferComponent } from './modules/transaction/store-store-transfer/store-store-transfer.component';
 import { TransactionComponent } from './modules/transaction/transaction.component';
 import { VendorManagedInventoryComponent } from './modules/transaction/vendor-managed-inventory/vendor-managed-inventory.component';
@@ -40,7 +44,10 @@ const routes: Routes = [
   { path: 'newlauchitem', component:NewItemLaunchDateComponent},
   { path: 'store2storetransfer', component:StoreStoreTransferComponent},
   { path: 'vendormanagedinventory', component:VendorManagedInventoryComponent},
-
+  { path: 'forecastconfig', component:ForecastedConfigComponent},
+  { path: 'stockregister', component:StockRegisterComponent},
+  { path: 'possale', component:PosSaleComponent},
+  { path: 'promotiondetails', component:PromotionDetailsComponent},
   
   {
     path: 'configurations',

@@ -30,6 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { VendorManagedInventoryComponent } from './modules/transaction/vendor-managed-inventory/vendor-managed-inventory.component';
+import { StockRegisterComponent } from './modules/transaction/stock-register/stock-register.component';
+import { PosSaleComponent } from './modules/transaction/pos-sale/pos-sale.component';
+import { PromotionDetailsComponent } from './modules/transaction/promotion-details/promotion-details.component';
 
 
 
@@ -54,6 +57,9 @@ import { VendorManagedInventoryComponent } from './modules/transaction/vendor-ma
     StoreStoreTransferComponent,
     // FormsModule
     VendorManagedInventoryComponent,
+    StockRegisterComponent,
+    PosSaleComponent,
+    PromotionDetailsComponent,
     // ConfigurationComponent,
     // SystemconfigComponent,
     // StoreStoreTransferConfigComponent,

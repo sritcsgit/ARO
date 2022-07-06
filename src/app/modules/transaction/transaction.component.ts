@@ -36,4 +36,13 @@ export class TransactionComponent implements OnInit {
   vendorManagedInventory(){
     this.router.navigate(['vendormanagedinventory'])
   }
+  stockRegister(){
+    this.router.navigate(['stockregister'])
+  }
+  posSale(){
+    this.router.navigate(['possale'])
+  }
+  promotionDetails(){
+    this.router.navigate(['promotiondetails'])
+  }
 }

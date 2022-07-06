@@ -6,6 +6,7 @@ import { ConfigurationRoutingModule } from './configuration-routing.module';
 import { SchedulingConfigComponent } from './scheduling-config/scheduling-config.component';
 import { StoreStoreTransferConfigComponent } from './store-store-transfer-config/store-store-transfer-config.component';
 import { SystemconfigComponent } from './systemconfig/systemconfig.component';
+import { ForecastedConfigComponent } from './forecasted-config/forecasted-config.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SystemconfigComponent } from './systemconfig/systemconfig.component';
    SystemconfigComponent,
    StoreStoreTransferConfigComponent,
    SchedulingConfigComponent,
+   ForecastedConfigComponent,
     
   ],
   imports: [

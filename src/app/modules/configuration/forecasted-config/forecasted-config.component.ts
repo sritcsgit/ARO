@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-scheduling-config',
-  templateUrl: './scheduling-config.component.html',
-  styleUrls: ['./scheduling-config.component.css']
+  selector: 'app-forecasted-config',
+  templateUrl: './forecasted-config.component.html',
+  styleUrls: ['./forecasted-config.component.css']
 })
-export class SchedulingConfigComponent implements OnInit {
+export class ForecastedConfigComponent implements OnInit {
 
   constructor(
     private router: Router,

@@ -8,7 +8,8 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class StoreService {
-  envurl: string = 'http://localhost:5001/';
+  //envurl: string = 'http://localhost:5001/';
+  envurl: string = 'http://54.179.68.250:5001/';
   searchStoreUrl: string = 'search-store';
   updateQtyUrl: string = 'update-quantity';
 

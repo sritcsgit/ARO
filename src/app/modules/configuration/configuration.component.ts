@@ -17,7 +17,7 @@ export class ConfigurationComponent implements OnInit {
   }
 
   systemConfigClick(){
-    alert('hi');
+    //alert('hi');
     this.router.navigate(['/systemConfig']);
   }
   storeTransferClick(){
@@ -25,6 +25,9 @@ export class ConfigurationComponent implements OnInit {
   }
   schedulingClick(){
     this.router.navigate(['/scheduling']);
+  }
+  ForecasteConfig(){
+    this.router.navigate(['/forecastconfig'])
   }
 
 }
