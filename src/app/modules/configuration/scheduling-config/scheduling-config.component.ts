@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -19,22 +19,23 @@ export class SchedulingConfigComponent implements OnInit {
   dailyForm!: FormGroup;
   weeklyForm!: FormGroup;
   monthlyForm!: FormGroup;
+  jobName: any = "Hyper-V Backup Job";
 
   constructor(private schedulingConfigService: SchedulingConfigService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.dailyForm = this.formBuilder.group({
-      noOfDays: ['1'],
-      time: ['1:30 AM']
+      noOfDays: [''],
+      time: ['']
     });
     this.weeklyForm = this.formBuilder.group({
-      date: ['1'],
-      time: ['1:30 AM'],
+      date: [''],
+      time: [''],
       weekDay: ['']
     });
     this.monthlyForm = this.formBuilder.group({
-      date: ['1'],
-      time: ['1:30 AM'],
+      date: [''],
+      time: [''],
       monthCount: ['1']
     });
     this.getJobSchedulers();
@@ -50,23 +51,57 @@ export class SchedulingConfigComponent implements OnInit {
 
   onDailyFormSubmit() {
     console.log(this.dailyForm.value);
-    // let dailyObj = {
-    //   'Pattern': 'Daily',
-    //   "Job_Name": "Hyper-v Backup Job",
-    //   "No_Of_Days": this.dailyForm.value.noOfDays,
-    //   "Time": this.dailyForm.value.time
-    // }
-    // this.schedulingConfigService.saveDailyData(dailyObj).subscribe((response)=>{
-    //   console.log(dailyObj)
-    // })
+    let Obj = {
+      "Pattern": "Daily",
+      "Job_Name": this.jobName,
+      "No_Of_Days": this.dailyForm.value.noOfDays,
+      "Time": this.dailyForm.value.time
+    }
+    console.log(Obj)
+    this.schedulingConfigService.saveJobConfig(Obj).subscribe((response) => {
+      console.log(response);
+      this.dailyForm.reset();
+    })
   }
 
   onWeeklyFormSubmit() {
     console.log(this.weeklyForm.value);
+    let Obj = {
+      "Pattern": "Weekly",
+      "Job_Name": this.jobName,
+      "No_Of_Weeks": this.weeklyForm.value.date,
+      "Time": this.weeklyForm.value.time,
+      "Days": this.weeklyForm.value.weekDay
+    }
+    console.log(Obj);
+    this.schedulingConfigService.saveJobConfig(Obj).subscribe((response) => {
+      console.log(response);
+      this.weeklyForm.reset();
+    })
   }
 
   onMonthlyFormSubmit() {
     console.log(this.monthlyForm.value);
+    let Obj = {
+      "Pattern": "Monthly",
+      "Job_Name": this.jobName,
+      "Day": this.monthlyForm.value.date,
+      "Time": this.monthlyForm.value.time,
+      "Time_Duration": this.monthlyForm.value.monthCount
+    }
+    console.log(Obj);
+    this.schedulingConfigService.saveJobConfig(Obj).subscribe((response) => {
+      console.log(response);
+      this.monthlyForm.reset();
+    })
+  }
+
+  onKeyPress(event: any) {
+    const pattern = /[\d]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (!pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 }
 

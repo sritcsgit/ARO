@@ -12,8 +12,8 @@ export class SchedulingConfigService extends BaseHttp {
         return this.get<any>(this.jobSchedulerUrl);
     }
 
-    saveDailyData(dailyObj: any) {
-        return this.post<any>(this.jobConfigUrl, dailyObj);
+    saveJobConfig(Obj: any) {
+        return this.post<any>(this.jobConfigUrl, Obj);
     }
 
 }
