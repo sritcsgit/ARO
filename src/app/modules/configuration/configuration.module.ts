@@ -11,13 +11,15 @@ import { SchedulingConfigComponent } from './scheduling-config/scheduling-config
 import { StoreStoreTransferConfigComponent } from './store-store-transfer-config/store-store-transfer-config.component';
 import { SystemconfigComponent } from './systemconfig/systemconfig.component';
 import { ForecastedConfigComponent } from './forecasted-config/forecasted-config.component';
+import { MonotonicConstraintsComponent } from './monotonic-constraints/monotonic-constraints.component';
 
 
 @NgModule({
   declarations: [
     SystemconfigComponent,
     StoreStoreTransferConfigComponent,
-    SchedulingConfigComponent
+    SchedulingConfigComponent,
+    MonotonicConstraintsComponent
   ],
   imports: [
     CommonModule,

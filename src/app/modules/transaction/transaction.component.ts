@@ -45,4 +45,7 @@ export class TransactionComponent implements OnInit {
   promotionDetails(){
     this.router.navigate(['promotiondetails'])
   }
+  PhysicalStock(){
+    this.router.navigate(['physicalstock'])
+  }
 }

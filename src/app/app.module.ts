@@ -33,6 +33,7 @@ import { VendorManagedInventoryComponent } from './modules/transaction/vendor-ma
 import { StockRegisterComponent } from './modules/transaction/stock-register/stock-register.component';
 import { PosSaleComponent } from './modules/transaction/pos-sale/pos-sale.component';
 import { PromotionDetailsComponent } from './modules/transaction/promotion-details/promotion-details.component';
+import { PhysicalStockCheckComponent } from './modules/transaction/physical-stock-check/physical-stock-check.component';
 
 
 
@@ -60,6 +61,7 @@ import { PromotionDetailsComponent } from './modules/transaction/promotion-detai
     StockRegisterComponent,
     PosSaleComponent,
     PromotionDetailsComponent,
+    PhysicalStockCheckComponent,
     // ConfigurationComponent,
     // SystemconfigComponent,
     // StoreStoreTransferConfigComponent,

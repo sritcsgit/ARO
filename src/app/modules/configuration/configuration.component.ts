@@ -28,6 +28,9 @@ export class ConfigurationComponent implements OnInit {
   ForecasteConfig(){
     this.router.navigate(['/forecastconfig'])
   }
+  monotonicConfig(){
+    this.router.navigate(['monotonicconfig'])
+  }
 
 }
 

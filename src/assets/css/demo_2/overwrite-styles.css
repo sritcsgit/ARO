@@ -1,6 +1,9 @@
 
+body, .mat-table {
+  font-family: 'Proxima-Nova-Font', Roboto, "Helvetica Neue", sans-serif !important;
+}
 .h6 {
-    font-family: "Open Sans", sans-serif;
+  font-family: 'Proxima-Nova-Font';
     font-weight: 600; }
   
   p {
@@ -71,7 +74,7 @@ table .mdi, table .fa { font-size: 20px;}
 .table th, .table td { white-space:pre-line; word-break: break-all}
 
 .table thead{
-background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+background: linear-gradient(to right, #dcd5e6, #bbb3cf);
 }
 .master-data .color-card:hover{ opacity: 0.75;}
 .page-body-wrapper { margin-top: 20px;}
@@ -95,3 +98,17 @@ background: linear-gradient(to right, #E9E4F0, #D3CCE3);
     border-color: #dee2e6 transparent #dee2e6 #dee2e6;
 }
 .left-tabs .nav-tabs .nav-link {border: 0px !important; border-bottom: 1px solid #ddd;}
+
+.mat-table thead { 
+  background: #bbb3cf !important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #dcd5e6, #bbb3cf);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dcd5e6, #bbb3cf);
+
+}
+.table-responsive tbody tr:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+th.mat-header-cell:first-of-type { padding-left: 0px !important;}
+.mat-table thead th label {       padding: 0.75rem;} 
+td.mat-cell { padding: 5px 10px !important;} 
+.master-data h4 {font-size: 16px;}
