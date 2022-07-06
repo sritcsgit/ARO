@@ -153,75 +153,82 @@
 
 
                     <div class="tab-pane" id="tab-2" role="tabpanel">
-                      <!-- <form [formGroup]="weeklyForm" (ngSubmit)="onWeeklyFormSubmit()"> -->
+                      <form [formGroup]="weeklyForm" (ngSubmit)="onWeeklyFormSubmit()">
                         <div class="row">
                           <div class="col-12">
                             <h6 style="margin-left: -20px;">
                               <span> Recur every </span> &nbsp; <input type="text" class="form-control"
-                                style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;"
-                                value="1" />
+                                formControlName="date"
+                                style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;" />
                               &nbsp; Week &nbsp;
-                              <input type="text" class="form-control"
-                                style="width: 90px; display: inline-block; padding: 3px 10px; height: 34px;"
-                                value="1:30 AM" />
+                              <input type="text" class="form-control" formControlName="time"
+                                style="width: 90px; display: inline-block; padding: 3px 10px; height: 34px;" />
                             </h6>
 
                             <div class="row">
                               <div class="col-md-3 mb-3">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" checked /> Sunday </label>
+                                  <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
+                                    value="Sunday" /> Sunday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" /> Monday </label>
+                                  <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
+                                    value="Monday" /> Monday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" /> Tuesday </label>
+                                  <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
+                                    value="Tuesday" /> Tuesday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" /> Wednessday </label>
+                                  <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
+                                    value="Wednessday" /> Wednessday </label>
                               </div>
                               <div class="col-md-3 ">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" /> Thursday </label>
+                                  <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
+                                    value="Thursday" /> Thursday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" /> Friday </label>
+                                  <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
+                                    value="Friday" /> Friday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" /> Saturday </label>
+                                  <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
+                                    value="Saturday" /> Saturday </label>
                               </div>
                             </div>
                           </div> <br> <br>
                         </div>
                         <div class="pb-5"> <button type="submit" class="btn btn-primary mt-5"> Save </button> </div>
-                      <!-- </form> -->
+                      </form>
                     </div>
 
 
                     <div class="tab-pane" id="tab-3" role="tabpanel">
-                      <!-- <form [formGroup]="monthlyForm" (ngSubmit)="onMonthlyFormSubmit()"> -->
+                      <form [formGroup]="monthlyForm" (ngSubmit)="onMonthlyFormSubmit()">
                         <div class="row">
                           <div class="col-12">
-                            <input type="radio" class="form-check-input mt-2" name="optionsRadios2" id="optionsRadios2"
-                              checked value="option1" /> Day &nbsp; &nbsp;
+                            <input type="radio" class="form-check-input mt-2" id="optionsRadios2" checked
+                              value="option1" /> Day &nbsp; &nbsp;
                             <input type="text" class="form-control"
                               style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;"
-                              value="21" />&nbsp;
+                              formControlName="date" />&nbsp;
                             <input type="text" class="form-control"
                               style="width: 90px; display: inline-block; padding: 3px 10px; height: 34px;"
-                              value="1:30 AM" /> &nbsp; of every &nbsp;
+                              value="1:30 AM" formControlName="time" /> &nbsp; of every &nbsp;
                             <input type="text" class="form-control"
-                              style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;" value="1" />
+                              style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;"
+                              formControlName="monthCount" />
                             Month(s)
                           </div>
                         </div>
                         <div class="pb-5"> <button type="submit" class="btn btn-primary mt-5"> Save </button> </div>
-                      <!-- </form> -->
+                      </form>
                     </div><br> <br>
 
                   </div>

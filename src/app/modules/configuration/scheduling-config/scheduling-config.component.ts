@@ -17,8 +17,8 @@ export class SchedulingConfigComponent implements OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   dailyForm!: FormGroup;
-  // weeklyForm!: FormGroup;
-  // monthlyForm!: FormGroup;
+  weeklyForm!: FormGroup;
+  monthlyForm!: FormGroup;
 
   constructor(private schedulingConfigService: SchedulingConfigService, private formBuilder: FormBuilder) { }
 
@@ -26,6 +26,16 @@ export class SchedulingConfigComponent implements OnInit {
     this.dailyForm = this.formBuilder.group({
       noOfDays: ['1'],
       time: ['1:30 AM']
+    });
+    this.weeklyForm = this.formBuilder.group({
+      date: ['1'],
+      time: ['1:30 AM'],
+      weekDay: ['']
+    });
+    this.monthlyForm = this.formBuilder.group({
+      date: ['1'],
+      time: ['1:30 AM'],
+      monthCount: ['1']
     });
     this.getJobSchedulers();
   }
@@ -39,14 +49,23 @@ export class SchedulingConfigComponent implements OnInit {
   }
 
   onDailyFormSubmit() {
-    console.log(this.dailyForm.value)
+    console.log(this.dailyForm.value);
+    // let dailyObj = {
+    //   'Pattern': 'Daily',
+    //   "Job_Name": "Hyper-v Backup Job",
+    //   "No_Of_Days": this.dailyForm.value.noOfDays,
+    //   "Time": this.dailyForm.value.time
+    // }
+    // this.schedulingConfigService.saveDailyData(dailyObj).subscribe((response)=>{
+    //   console.log(dailyObj)
+    // })
   }
 
-  // onWeeklyFormSubmit() {
+  onWeeklyFormSubmit() {
+    console.log(this.weeklyForm.value);
+  }
 
-  // }
-
-  // onMonthlyFormSubmit() {
-
-  // }
+  onMonthlyFormSubmit() {
+    console.log(this.monthlyForm.value);
+  }
 }
