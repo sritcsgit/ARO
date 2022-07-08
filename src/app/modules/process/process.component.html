@@ -59,8 +59,8 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="exampleFormControlSelect1">Date</label>
-                          <input type="date" class="form-control form-control-sm" 
-                            aria-label="Username" placeholder="Date" data-date-format=" MM DD YYYY" formControlName="date" />
+                          <input type="date" class="form-control form-control-sm" aria-label="Username"
+                            placeholder="Date" data-date-format=" MM DD YYYY" formControlName="date" />
                         </div>
                       </div>
 
@@ -184,7 +184,7 @@
 
 
                   <ng-container matColumnDef="SKUCode">
-                    <th mat-header-cell *matHeaderCellDef  scope="col">
+                    <th mat-header-cell *matHeaderCellDef scope="col">
                       <label>
                         SKUCode
                       </label>
@@ -193,7 +193,7 @@
                   </ng-container>
 
                   <ng-container matColumnDef="ReOrderedQty">
-                    <th mat-header-cell *matHeaderCellDef  scope="col">
+                    <th mat-header-cell *matHeaderCellDef scope="col">
                       <label>
                         Re-Ordered
                       </label>
@@ -202,18 +202,20 @@
                   </ng-container>
 
                   <ng-container matColumnDef="OverriderReorderQty">
-                    <th mat-header-cell *matHeaderCellDef  scope="col">
+                    <th mat-header-cell *matHeaderCellDef scope="col">
                       <label>
                         Overrider Re-order
                       </label>
                     </th>
-                    <td mat-cell *matCellDef="let element" > 
-                      <input type="number" style="width:90px ;" placeholder="Qty" [(ngModel)]="reorder" />
+                    <td mat-cell *matCellDef="let element">
+                      <section *ngIf="!element.editMode">{{element.Override_RQ}}</section>
+                      <input type="number" *ngIf="element.editMode" style="width:90px;" placeholder="Qty"
+                        [(ngModel)]="overrideReorder" />
                     </td>
                   </ng-container>
 
                   <ng-container matColumnDef="ExpectedDeliveryData">
-                    <th mat-header-cell *matHeaderCellDef  scope="col">
+                    <th mat-header-cell *matHeaderCellDef scope="col">
                       <label>
                         Expected Delivery Data
                       </label>
@@ -223,7 +225,7 @@
                   </ng-container>
 
                   <ng-container matColumnDef="SupplierNameQty">
-                    <th mat-header-cell *matHeaderCellDef  scope="col">
+                    <th mat-header-cell *matHeaderCellDef scope="col">
                       <label>
                         Supplier Name
                       </label>
@@ -237,12 +239,14 @@
                         Actions
                       </label>
                     </th>
-                    <td mat-cell *matCellDef="let element"> 
-                      <span matTooltip="Edit" style="cursor: pointer;" 
-                      (click)="onProdEdit(element)"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> &nbsp; 
-                      <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                    </span>
-                     </td>
+                    <td mat-cell *matCellDef="let element">
+                      <span style="cursor: pointer;">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="onProdEdit(element)"
+                          *ngIf="!element.editMode"></i> &nbsp;
+                        <i class="fa fa-floppy-o" aria-hidden="true" (click)="onProdSave(element)"
+                          *ngIf="element.editMode"></i>
+                      </span>
+                    </td>
                   </ng-container>
 
                   <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>

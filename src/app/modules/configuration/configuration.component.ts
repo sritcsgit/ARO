@@ -17,19 +17,19 @@ export class ConfigurationComponent implements OnInit {
   }
 
   systemConfigClick(){
-    this.router.navigate(['/systemConfig']);
+    this.router.navigate(['configurations/systemConfig']);
   }
   storeTransferClick(){
-    this.router.navigate(['/storeTransfer']);
+    this.router.navigate(['configurations/storeTransfer']);
   }
   schedulingClick(){
-    this.router.navigate(['/scheduling']);
+    this.router.navigate(['configurations/scheduling']);
   }
   ForecasteConfig(){
-    this.router.navigate(['/forecastconfig'])
+    this.router.navigate(['configurations/forecastconfig'])
   }
   monotonicConfig(){
-    this.router.navigate(['monotonicconfig'])
+    this.router.navigate(['configurations/monotonicconfig'])
   }
 
 }

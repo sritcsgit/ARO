@@ -11,7 +11,7 @@ import { StoreToStoreTransferConfigService } from './store-store-transfer-config
 })
 export class StoreStoreTransferConfigComponent implements OnInit {
 
-  displayColumns: string[] = ['Store_ID', 'Store_Name', 'Store_Store_Transferd_Config', 'Actions']
+  displayColumns: string[] = ['Store_ID', 'Store_Name', 'Store_Store_Transferd_Config']
   storeTransferData!: MatTableDataSource<any>;
   pageSize = 10;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;

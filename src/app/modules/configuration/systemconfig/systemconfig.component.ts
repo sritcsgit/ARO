@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SystemConfigService } from './systemconfig.service';
 
@@ -20,18 +20,18 @@ export class SystemconfigComponent implements OnInit {
 
   ngOnInit(): void {
     this.dailyForm = this.formBuilder.group({
-      noOfDays: [''],
-      time: ['']
+      noOfDays: ['1'],
+      time: ['', Validators.required]
     });
     this.weeklyForm = this.formBuilder.group({
-      date: [''],
-      time: [''],
-      weekDay: [''],
+      date: ['1'],
+      time: ['', Validators.required],
+      weekDay: ['', Validators.required],
     });
     this.monthlyForm = this.formBuilder.group({
-      date: [''],
-      time: [''],
-      monthCount: ['']
+      date: ['', Validators.required],
+      time: ['', Validators.required],
+      monthCount: ['1']
     });
   }
 
@@ -52,6 +52,7 @@ export class SystemconfigComponent implements OnInit {
     this.systemConfigService.saveJobConfig(Obj).subscribe((response) => {
       console.log(response);
       this.dailyForm.reset();
+      this.dailyForm.controls['noOfDays'].setValue(1);
     })
   }
 
@@ -68,6 +69,7 @@ export class SystemconfigComponent implements OnInit {
     this.systemConfigService.saveJobConfig(Obj).subscribe((response) => {
       console.log(response);
       this.weeklyForm.reset();
+      this.weeklyForm.controls['date'].setValue(1);
     })
   }
 
@@ -84,6 +86,7 @@ export class SystemconfigComponent implements OnInit {
     this.systemConfigService.saveJobConfig(Obj).subscribe((response) => {
       console.log(response);
       this.monthlyForm.reset();
+      this.monthlyForm.controls['monthCount'].setValue(1);
     })
   }
 
