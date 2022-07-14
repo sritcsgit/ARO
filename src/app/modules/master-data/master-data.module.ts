@@ -11,6 +11,7 @@ import { DistributionCenterComponent } from './distribution-center/distribution-
 import { MasterDataComponent } from './master-data.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class MasterDataModule { }
