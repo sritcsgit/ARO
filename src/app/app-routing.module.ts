@@ -8,7 +8,7 @@ import { SystemconfigComponent } from './modules/configuration/systemconfig/syst
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DistributionCenterComponent } from './modules/master-data/distribution-center/distribution-center.component';
 import { MasterDataComponent } from './modules/master-data/master-data.component';
-import { ProductMasterComponent } from './modules/master-data/product-master/product-master.component';
+// import { ProductMasterComponent } from './modules/master-data/product-master/product-master.component';
 import { StoreMasterComponent } from './modules/master-data/store-master/store-master.component';
 import { StoreSupplierMasterComponent } from './modules/master-data/store-supplier-master/store-supplier-master.component';
 import { SupplierMasterComponent } from './modules/master-data/supplier-master/supplier-master.component';
@@ -29,33 +29,38 @@ const routes: Routes = [
 
   { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'masters', component: MasterDataComponent },
-  { path: 'process', component:ProcessComponent},
-  { path: 'transaction', component:TransactionComponent},
-  { path: 'admin', component:AdminComponent},
-  { path: 'systemConfig', component:SystemconfigComponent},
- 
-  { path: 'productmaster', component:ProductMasterComponent},
-  { path: 'storemaster', component:StoreMasterComponent},
-  { path: 'distributionmaster', component:DistributionCenterComponent},
-  { path: 'suppliermaster', component:SupplierMasterComponent},
-  { path: 'storesupplymaster', component:StoreSupplierMasterComponent},
+  { path: 'process', component: ProcessComponent },
+  { path: 'transaction', component: TransactionComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'pricemarkdown', component: PriceMarkdownComponent },
+  { path: 'phaseoutitem', component: PhaseOutItemsComponent },
+  { path: 'newlauchitem', component: NewItemLaunchDateComponent },
+  { path: 'store2storetransfer', component: StoreStoreTransferComponent },
+  { path: 'vendormanagedinventory', component: VendorManagedInventoryComponent },
+  { path: 'stockregister', component: StockRegisterComponent },
+  { path: 'possale', component: PosSaleComponent },
+  { path: 'promotiondetails', component: PromotionDetailsComponent },
+  { path: 'physicalstock', component: PhysicalStockCheckComponent },
+  
+  // { path: 'masters', component: MasterDataComponent },
+  // { path: 'systemConfig', component: SystemconfigComponent },
+  // { path: 'productmaster', component:ProductMasterComponent},
+  // { path: 'storemaster', component:StoreMasterComponent},
+  // { path: 'distributionmaster', component:DistributionCenterComponent},
+  // { path: 'suppliermaster', component:SupplierMasterComponent},
+  // { path: 'storesupplymaster', component:StoreSupplierMasterComponent},
+  // { path: 'forecastconfig', component: ForecastedConfigComponent },
+  // { path: 'monotonicconfig', component: MonotonicConstraintsComponent },
 
-  { path: 'pricemarkdown', component:PriceMarkdownComponent},
-  { path: 'phaseoutitem', component:PhaseOutItemsComponent},
-  { path: 'newlauchitem', component:NewItemLaunchDateComponent},
-  { path: 'store2storetransfer', component:StoreStoreTransferComponent},
-  { path: 'vendormanagedinventory', component:VendorManagedInventoryComponent},
-  { path: 'forecastconfig', component:ForecastedConfigComponent},
-  { path: 'stockregister', component:StockRegisterComponent},
-  { path: 'possale', component:PosSaleComponent},
-  { path: 'promotiondetails', component:PromotionDetailsComponent},
-  { path: 'monotonicconfig', component:MonotonicConstraintsComponent},
-  { path: 'physicalstock', component:PhysicalStockCheckComponent},
   {
     path: 'configurations',
     loadChildren: () =>
       import('./modules/configuration/configuration.module').then((m) => m.ConfigurationModule)
+  },
+  {
+    path: 'masters',
+    loadChildren: () =>
+      import('./modules/master-data/master-data.module').then((m) => m.MasterDataModule)
   }
 
 ];

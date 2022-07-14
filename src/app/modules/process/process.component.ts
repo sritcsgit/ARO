@@ -13,7 +13,7 @@ export class ProcessComponent implements OnInit {
   ngform!: FormGroup;
   displayColumns: string[] = ['ProductName', 'SKUCode', 'ReOrderedQty', 'OverriderReorderQty', 'ExpectedDeliveryData', 'SupplierNameQty', 'Actions']
   dataSource: any;
-  reorder!: any;
+  overrideReorder!: any;
   pipe = new DatePipe('en-US');
 
   constructor(private http: HttpClient, private storeService: StoreService, private formBuilder: FormBuilder) { }
@@ -40,21 +40,30 @@ export class ProcessComponent implements OnInit {
       "SKU_CODE": this.ngform.value.SKU_CODE
     }
     this.storeService.searchStores(obj).subscribe((response) => {
+      for (let prod of response[0]) {
+        prod.editMode = false;
+      }
       this.dataSource = response[0];
+      console.log(this.dataSource)
     })
   }
 
   onProdEdit(product: any) {
-    
+    product.editMode = true;
+    this.overrideReorder = product.Override_RQ;
+  }
+
+  onProdSave(product: any) {
     const myFormattedDate = this.pipe.transform(product.Date, 'yyyy-MM-dd');
     let prodObj = {
       "Date": myFormattedDate,
-      "Override_RQ": this.reorder
+      "Override_RQ": this.overrideReorder
     };
     this.storeService.saveProduct(prodObj).subscribe((response) => {
       console.log(response);
       this.onSubmit();
-      this.reorder = undefined;
+      this.overrideReorder = undefined;
+      product.editMode = false;
     });
   }
 

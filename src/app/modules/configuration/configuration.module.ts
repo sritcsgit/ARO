@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -12,14 +12,15 @@ import { StoreStoreTransferConfigComponent } from './store-store-transfer-config
 import { SystemconfigComponent } from './systemconfig/systemconfig.component';
 import { ForecastedConfigComponent } from './forecasted-config/forecasted-config.component';
 import { MonotonicConstraintsComponent } from './monotonic-constraints/monotonic-constraints.component';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
     SystemconfigComponent,
     StoreStoreTransferConfigComponent,
     SchedulingConfigComponent,
-    MonotonicConstraintsComponent
+    MonotonicConstraintsComponent,
+    ForecastedConfigComponent
   ],
   imports: [
     CommonModule,
@@ -29,9 +30,10 @@ import { MonotonicConstraintsComponent } from './monotonic-constraints/monotonic
     MatPaginatorModule,
     MatSortModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule
   ],
-  providers: [],
+  providers: [DatePipe],
 
 })
 export class ConfigurationModule { }

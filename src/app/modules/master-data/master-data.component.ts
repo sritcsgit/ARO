@@ -14,21 +14,21 @@ export class MasterDataComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  productMasterClick(){
+  productMasterClick() {
     //alert('hi');
-    this.router.navigate(['/productmaster']);
+    this.router.navigate(['masters/productmaster']);
   }
-  storeMasterClick(){
-    this.router.navigate(['/storemaster']);
+  storeMasterClick() {
+    this.router.navigate(['masters/storemaster']);
   }
 
-  distributionMasterClick(){
-    this.router.navigate(['/distributionmaster']);
+  distributionMasterClick() {
+    this.router.navigate(['masters/distributionmaster']);
   }
-  supplierMasterClick(){
-    this.router.navigate(['/suppliermaster']);
+  supplierMasterClick() {
+    this.router.navigate(['masters/suppliermaster']);
   }
-  storeSupplierMasterClick(){
-    this.router.navigate(['/storesupplymaster']);
+  storeSupplierMasterClick() {
+    this.router.navigate(['masters/storesupplymaster']);
   }
 }

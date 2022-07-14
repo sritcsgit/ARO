@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SchedulingConfigService } from './scheduling-config.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-scheduling-config',
@@ -21,21 +22,22 @@ export class SchedulingConfigComponent implements OnInit {
   monthlyForm!: FormGroup;
   jobName: any = "Hyper-V Backup Job";
 
-  constructor(private schedulingConfigService: SchedulingConfigService, private formBuilder: FormBuilder) { }
+  constructor(private schedulingConfigService: SchedulingConfigService, private formBuilder: FormBuilder,
+    public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     this.dailyForm = this.formBuilder.group({
-      noOfDays: [''],
-      time: ['']
+      noOfDays: ['1'],
+      time: ['', Validators.required]
     });
     this.weeklyForm = this.formBuilder.group({
-      date: [''],
-      time: [''],
-      weekDay: ['']
+      date: ['1'],
+      time: ['', Validators.required],
+      weekDay: ['', Validators.required]
     });
     this.monthlyForm = this.formBuilder.group({
-      date: [''],
-      time: [''],
+      date: ['', Validators.required],
+      time: ['', Validators.required],
       monthCount: ['1']
     });
     this.getJobSchedulers();
@@ -43,6 +45,10 @@ export class SchedulingConfigComponent implements OnInit {
 
   getJobSchedulers() {
     this.schedulingConfigService.getJobScheduler().subscribe((response) => {
+      for (let resp of response) {
+        resp.Job_Start = this.datepipe.transform(resp.Job_Start, 'yyyy-MM-dd hh:mm:ss');
+        resp.Job_End = this.datepipe.transform(resp.Job_End, 'yyyy-MM-dd hh:mm:ss');
+      }
       this.jobSchedulers = new MatTableDataSource(response);
       this.jobSchedulers.paginator = this.paginator;
       this.jobSchedulers.sort = this.sort;
@@ -61,6 +67,7 @@ export class SchedulingConfigComponent implements OnInit {
     this.schedulingConfigService.saveJobConfig(Obj).subscribe((response) => {
       console.log(response);
       this.dailyForm.reset();
+      this.dailyForm.controls['noOfDays'].setValue(1);
     })
   }
 
@@ -77,6 +84,7 @@ export class SchedulingConfigComponent implements OnInit {
     this.schedulingConfigService.saveJobConfig(Obj).subscribe((response) => {
       console.log(response);
       this.weeklyForm.reset();
+      this.weeklyForm.controls['date'].setValue(1);
     })
   }
 
@@ -93,6 +101,7 @@ export class SchedulingConfigComponent implements OnInit {
     this.schedulingConfigService.saveJobConfig(Obj).subscribe((response) => {
       console.log(response);
       this.monthlyForm.reset();
+      this.monthlyForm.controls['monthCount'].setValue(1);
     })
   }
 

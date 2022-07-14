@@ -35,41 +35,37 @@ import { PosSaleComponent } from './modules/transaction/pos-sale/pos-sale.compon
 import { PromotionDetailsComponent } from './modules/transaction/promotion-details/promotion-details.component';
 import { PhysicalStockCheckComponent } from './modules/transaction/physical-stock-check/physical-stock-check.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MasterDataComponent,
     DashboardComponent,
     AdminComponent,
     ProcessComponent,
     TransactionComponent,
-    ProductMasterComponent,
-    StoreMasterComponent,
-    DistributionCenterComponent,
-    SupplierMasterComponent,
-    StoreSupplierMasterComponent,
     PriceMarkdownComponent,
     PhaseOutItemsComponent,
     NewItemLaunchDateComponent,
     StoreStoreTransferComponent,
-    // FormsModule
     VendorManagedInventoryComponent,
     StockRegisterComponent,
     PosSaleComponent,
     PromotionDetailsComponent,
     PhysicalStockCheckComponent,
+    // MasterDataComponent,
+    // ProductMasterComponent,
+    // StoreMasterComponent,
+    // DistributionCenterComponent,
+    // SupplierMasterComponent,
+    // StoreSupplierMasterComponent,
+    // FormsModule
     // ConfigurationComponent,
     // SystemconfigComponent,
     // StoreStoreTransferConfigComponent,
     // SchedulingConfigComponent,
-    
   ],
   imports: [
-  
     BrowserModule,
     AppRoutingModule,
     ConfigurationModule,
