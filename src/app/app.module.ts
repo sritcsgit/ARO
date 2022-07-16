@@ -24,7 +24,7 @@ import { PriceMarkdownComponent } from './modules/transaction/price-markdown/pri
 import { PhaseOutItemsComponent } from './modules/transaction/phase-out-items/phase-out-items.component';
 import { NewItemLaunchDateComponent } from './modules/transaction/new-item-launch-date/new-item-launch-date.component';
 import { StoreStoreTransferComponent } from './modules/transaction/store-store-transfer/store-store-transfer.component';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +34,9 @@ import { StockRegisterComponent } from './modules/transaction/stock-register/sto
 import { PosSaleComponent } from './modules/transaction/pos-sale/pos-sale.component';
 import { PromotionDetailsComponent } from './modules/transaction/promotion-details/promotion-details.component';
 import { PhysicalStockCheckComponent } from './modules/transaction/physical-stock-check/physical-stock-check.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { StoreService } from './modules/process/storeservice';
 
 @NgModule({
   declarations: [
@@ -52,9 +55,11 @@ import { PhysicalStockCheckComponent } from './modules/transaction/physical-stoc
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
-  providers: [],
+  providers: [StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

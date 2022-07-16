@@ -1,56 +1,88 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { StoreService } from './storeservice';
 import { subscribeOn } from 'rxjs';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 @Component({
   selector: 'app-process',
   templateUrl: './process.component.html',
   styleUrls: ['./process.component.css']
 })
 export class ProcessComponent implements OnInit {
-  ngform!: FormGroup;
-  displayColumns: string[] = ['ProductName',  'ReOrderedQty', 'OverriderReorderQty',  'SupplierNameQty', 'Actions']
-  dataSource: any;
+  processForm!: FormGroup;
+  displayColumns: string[] = ['Product_Name', 'SKU_ID', 'Re_Order_Quantity', 'OverriderReorderQty', 'Expected_delivary_Date', 'Supplier_Name', 'Actions']
+  processData!: MatTableDataSource<any>;
   overrideReorder!: any;
   pipe = new DatePipe('en-US');
+  pageSize = 10;
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
-  constructor(private http: HttpClient, private storeService: StoreService, private formBuilder: FormBuilder) { }
+  constructor(private http: HttpClient, private storeService: StoreService,
+    private formBuilder: FormBuilder) { }
   ngOnInit(): void {
-  
+    this.processForm = this.formBuilder.group({
+      date: [""],
+      storeName: [""],
+      ProductCateg: [''],
+      SubCategories: [''],
+      abcClass: [''],
+      ProductName: [''],
+      SKU_CODE: ['']
+    });
   }
   onSubmit() {
-    console.log(this.ngform.value);
+    console.log(this.processForm.value);
+    // let obj = {
+    //   "Date": this.ngform.value.date,
+    //   "Store_Name": this.ngform.value.storeName,
+    //   "Product_Categories": this.ngform.value.ProductCateg,
+    //   "Sub_Categories": this.ngform.value.SubCategories,
+    //   "ABC_Class": this.ngform.value.abcClass,
+    //   "Product_Name": this.ngform.value.ProductName,
+    //   "SKU_CODE": this.ngform.value.SKU_CODE
+    // }
     let obj = {
-      "Date": this.ngform.value.date,
-      "Store_Name": this.ngform.value.storeName,
-      "Product_Categories": this.ngform.value.ProductCateg,
-      "Sub_Categories": this.ngform.value.SubCategories,
-      "ABC_Class": this.ngform.value.abcClass,
-      "Product_Name": this.ngform.value.ProductName,
-      "SKU_CODE": this.ngform.value.SKU_CODE
+      "Date": this.processForm.value.date,
+      "Category_Name": this.processForm.value.ProductCateg,
+      "Subcategory_Name": this.processForm.value.SubCategories,
+      "Product_Name": this.processForm.value.ProductName,
+      "SKU_ID": this.processForm.value.SKU_CODE
     }
     this.storeService.searchStores(obj).subscribe((response) => {
       for (let prod of response[0]) {
         prod.editMode = false;
       }
-      this.dataSource = response[0];
-      console.log(this.dataSource)
+      this.processData = new MatTableDataSource(response[0]);
+      console.log(this.processData);
+      this.processData.paginator = this.paginator;
+      this.processData.sort = this.sort;
     })
   }
 
   onProdEdit(product: any) {
     product.editMode = true;
-    this.overrideReorder = product.Override_RQ;
+    this.overrideReorder = product.Re_Order_Quantity;
   }
 
   onProdSave(product: any) {
-    const myFormattedDate = this.pipe.transform(product.Date, 'yyyy-MM-dd');
+    const myFormattedDate = this.pipe.transform(product.Time_key, 'yyyy-MM-dd');
+    // let prodObj = {
+    //   "Date": myFormattedDate,
+    //   "Override_RQ": this.overrideReorder
+    // };
+
     let prodObj = {
-      "Date": myFormattedDate,
+      "Time_Key": myFormattedDate,
+      "Store_Key": product.Store_Key,
+      "Product_Key": product.Product_Key,
       "Override_RQ": this.overrideReorder
-    };
+    }
+    console.log(prodObj)
     this.storeService.saveProduct(prodObj).subscribe((response) => {
       console.log(response);
       this.onSubmit();

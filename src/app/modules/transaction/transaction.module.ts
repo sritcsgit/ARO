@@ -16,6 +16,7 @@ import { PriceMarkdownComponent } from './price-markdown/price-markdown.componen
 import { PosSaleComponent } from './pos-sale/pos-sale.component';
 import { PhysicalStockCheckComponent } from './physical-stock-check/physical-stock-check.component';
 import { NewItemLaunchDateComponent } from './new-item-launch-date/new-item-launch-date.component';
+import { PhysicalStockCheckService } from './physical-stock-check/physical-stock-check.service';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { NewItemLaunchDateComponent } from './new-item-launch-date/new-item-laun
     MatSortModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+  ],
+  providers:[PhysicalStockCheckService]
 })
 export class TransactionModule { }
