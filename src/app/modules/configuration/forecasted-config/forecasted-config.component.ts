@@ -13,17 +13,17 @@ import { forecastService } from './forecast-service';
   styleUrls: ['./forecasted-config.component.css']
 })
 export class ForecastedConfigComponent implements OnInit {
-  
+
   pipe = new DatePipe('en-US');
   forecastForm!: FormGroup;
-  displayColumns: string[] = ['Time_Key', 'Store_Name', 'Product_Name', 'Category_Name', 'Sales_Volume', 'Forecasted_Volume', 'P90', 'Actions']
+  displayColumns: string[] = ['Time_Key', 'Store_Name', 'Product_Name', 'Category_Name', 'Sales_Volume', 'Forecasted_Volume', 'P90'];
   forecastMasterData!: MatTableDataSource<any>;
   pageSize = 10;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   constructor(
-    private router: Router,private formBuilder: FormBuilder, private forecastMasterService: forecastService
+    private router: Router, private formBuilder: FormBuilder, private forecastMasterService: forecastService
   ) { }
 
   ngOnInit(): void {
@@ -33,10 +33,10 @@ export class ForecastedConfigComponent implements OnInit {
       Category_Name: [""],
       Subcategory_Name: [''],
       Product_Name: [''],
-      SKU_ID :[''],
+      SKU_ID: [''],
     });
   }
-  backButtonClick(){
+  backButtonClick() {
     this.router.navigate(['configurations']);
   }
 
@@ -49,8 +49,8 @@ export class ForecastedConfigComponent implements OnInit {
       "Store_Name": this.forecastForm.value.Store_Name,
       "Category_Name": this.forecastForm.value.Category_Name,
       "Subcategory_Name": this.forecastForm.value.Subcategory_Name,
-      "SKU_ID" : this.forecastForm.value.SKU_ID,
-      "Product_Name" :this.forecastForm.value.Product_Name ,
+      "SKU_ID": this.forecastForm.value.SKU_ID,
+      "Product_Name": this.forecastForm.value.Product_Name,
 
     }
     this.forecastMasterService.getStores(obj).subscribe((response) => {

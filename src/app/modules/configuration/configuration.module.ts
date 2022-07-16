@@ -13,6 +13,8 @@ import { SystemconfigComponent } from './systemconfig/systemconfig.component';
 import { ForecastedConfigComponent } from './forecasted-config/forecasted-config.component';
 import { MonotonicConstraintsComponent } from './monotonic-constraints/monotonic-constraints.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { StoreToStoreTransferConfigService } from './store-store-transfer-config/store-store-transfer-config.service';
+import { forecastService } from './forecasted-config/forecast-service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     ReactiveFormsModule,
     MatSlideToggleModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe,StoreToStoreTransferConfigService,forecastService],
 
 })
 export class ConfigurationModule { }

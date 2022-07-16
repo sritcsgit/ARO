@@ -37,6 +37,7 @@ import { PhysicalStockCheckComponent } from './modules/transaction/physical-stoc
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { StoreService } from './modules/process/storeservice';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { StoreService } from './modules/process/storeservice';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSlideToggleModule
   ],
   providers: [StoreService],
   bootstrap: [AppComponent]
