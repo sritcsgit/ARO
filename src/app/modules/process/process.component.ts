@@ -11,22 +11,14 @@ import { DatePipe } from '@angular/common';
 })
 export class ProcessComponent implements OnInit {
   ngform!: FormGroup;
-  displayColumns: string[] = ['ProductName', 'SKUCode', 'ReOrderedQty', 'OverriderReorderQty', 'ExpectedDeliveryData', 'SupplierNameQty', 'Actions']
+  displayColumns: string[] = ['ProductName',  'ReOrderedQty', 'OverriderReorderQty',  'SupplierNameQty', 'Actions']
   dataSource: any;
   overrideReorder!: any;
   pipe = new DatePipe('en-US');
 
   constructor(private http: HttpClient, private storeService: StoreService, private formBuilder: FormBuilder) { }
   ngOnInit(): void {
-    this.ngform = this.formBuilder.group({
-      date: [""],
-      storeName: [""],
-      ProductCateg: [''],
-      SubCategories: [''],
-      abcClass: [''],
-      ProductName: [''],
-      SKU_CODE: ['']
-    });
+  
   }
   onSubmit() {
     console.log(this.ngform.value);
