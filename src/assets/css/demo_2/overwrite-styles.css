@@ -112,3 +112,7 @@ th.mat-header-cell:first-of-type { padding-left: 0px !important;}
 .mat-table thead th label {       padding: 0.75rem;} 
 td.mat-cell { padding: 5px 10px !important;} 
 .master-data h4 {font-size: 16px;}
+
+
+
+.landing-page-table-head h6{ background-color: #f3f6f9; padding: 10px;}
