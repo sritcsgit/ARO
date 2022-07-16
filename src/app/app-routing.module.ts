@@ -30,18 +30,18 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'process', component: ProcessComponent },
-  { path: 'transaction', component: TransactionComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'pricemarkdown', component: PriceMarkdownComponent },
-  { path: 'phaseoutitem', component: PhaseOutItemsComponent },
-  { path: 'newlauchitem', component: NewItemLaunchDateComponent },
-  { path: 'store2storetransfer', component: StoreStoreTransferComponent },
-  { path: 'vendormanagedinventory', component: VendorManagedInventoryComponent },
-  { path: 'stockregister', component: StockRegisterComponent },
-  { path: 'possale', component: PosSaleComponent },
-  { path: 'promotiondetails', component: PromotionDetailsComponent },
-  { path: 'physicalstock', component: PhysicalStockCheckComponent },
-  
+  // { path: 'transaction', component: TransactionComponent },
+  // { path: 'pricemarkdown', component: PriceMarkdownComponent },
+  // { path: 'phaseoutitem', component: PhaseOutItemsComponent },
+  // { path: 'newlauchitem', component: NewItemLaunchDateComponent },
+  // { path: 'store2storetransfer', component: StoreStoreTransferComponent },
+  // { path: 'vendormanagedinventory', component: VendorManagedInventoryComponent },
+  // { path: 'stockregister', component: StockRegisterComponent },
+  // { path: 'possale', component: PosSaleComponent },
+  // { path: 'promotiondetails', component: PromotionDetailsComponent },
+  // { path: 'physicalstock', component: PhysicalStockCheckComponent },
+
   // { path: 'masters', component: MasterDataComponent },
   // { path: 'systemConfig', component: SystemconfigComponent },
   // { path: 'productmaster', component:ProductMasterComponent},
@@ -61,8 +61,12 @@ const routes: Routes = [
     path: 'masters',
     loadChildren: () =>
       import('./modules/master-data/master-data.module').then((m) => m.MasterDataModule)
+  },
+  {
+    path: 'transaction',
+    loadChildren: () =>
+      import('./modules/transaction/transaction.module').then((m) => m.TransactionModule)
   }
-
 ];
 
 @NgModule({

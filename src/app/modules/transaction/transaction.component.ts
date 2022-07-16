@@ -16,36 +16,36 @@ export class TransactionComponent implements OnInit {
   }
   priceMarkdown(){
     //alert('hi');
-    this.router.navigate(['/pricemarkdown']);
+    this.router.navigate(['transaction/pricemarkdown']);
   }
   phaseOutItems(){
     //alert('hi');
-    this.router.navigate(['/phaseoutitem']);
+    this.router.navigate(['transaction/phaseoutitem']);
   }
   newLaunchItem(){
     //alert('hi');
-    this.router.navigate(['/newlauchitem']);
+    this.router.navigate(['transaction/newlauchitem']);
   }
   storeStoreTransfer(){
     //alert('hi');
-    this.router.navigate(['/store2storetransfer']);
+    this.router.navigate(['transaction/store2storetransfer']);
   }
   backButtonClick(){
     this.router.navigate(['transaction']);
   }
   vendorManagedInventory(){
-    this.router.navigate(['vendormanagedinventory'])
+    this.router.navigate(['transaction/vendormanagedinventory'])
   }
   stockRegister(){
-    this.router.navigate(['stockregister'])
+    this.router.navigate(['transaction/stockregister'])
   }
   posSale(){
-    this.router.navigate(['possale'])
+    this.router.navigate(['transaction/possale'])
   }
   promotionDetails(){
-    this.router.navigate(['promotiondetails'])
+    this.router.navigate(['transaction/promotiondetails'])
   }
   PhysicalStock(){
-    this.router.navigate(['physicalstock'])
+    this.router.navigate(['transaction/physicalstock'])
   }
 }

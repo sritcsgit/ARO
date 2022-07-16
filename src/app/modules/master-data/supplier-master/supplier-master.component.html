@@ -177,7 +177,7 @@
                         Status
                       </label>
                     </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.Status==1?'Active':'Inactive'}} </td>
                   </ng-container>
 
                   <ng-container matColumnDef="Actions">

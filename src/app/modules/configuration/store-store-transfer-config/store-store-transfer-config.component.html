@@ -33,36 +33,49 @@
 
             <div class="clearfix"></div>
             <div class="product-filters">
+              <form [formGroup]="storeTransferForm" (ngSubmit)="onStoreTransferSubmit()">
+                <div class="card">
+                  <div class="card-body">
 
-              <div class="card">
-                <div class="card-body">
-
-                  <div class="row">
+                    <div class="row">
 
 
 
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect3">Store ID</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Store ID"
-                          aria-label="Username" />
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect3">Store ID</label>
+                          <input type="text" class="form-control form-control-sm" placeholder="Store ID"
+                            aria-label="storeID" formControlName="storeID" />
+                        </div>
                       </div>
-                    </div>
 
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect3">Store Name</label>
-                        <select class="form-control form-control-sm" id="exampleFormControlSelect1">
-                          <option>Store Name </option>
-                          <option>Store Name1 </option>
-                          <option>Store Name2</option>
-                          <option>Store Name3</option>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect3">Store Name</label>
+                          <select class="form-control form-control-sm" id="exampleFormControlSelect1"
+                            formControlName="storeName">
+                            <option>Store Name </option>
+                            <option>Store Name1 </option>
+                            <option>Store Name2</option>
+                            <option>Store Name3</option>
 
-                        </select>
+                          </select>
+                        </div>
                       </div>
-                    </div>
 
-                    <!-- <div class="col-md-3">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect3">Distance</label>
+                          <select class="form-control form-control-sm" id="exampleFormControlSelect1"
+                            formControlName="distance">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleFormControlSelect3">SKU Code</label>
                       <input type="text" class="form-control form-control-sm" placeholder="SKU Code" aria-label="Username" />
@@ -77,22 +90,23 @@
                   </div> -->
 
 
-                    <div class="col-md-3">
-                      <br>
-                      <button type="button" class=" btn btn-sm btn-success mt-2 mt-sm-0 btn-icon-text">
-                        <i class="mdi mdi-checkbox-marked-circle-outline"></i> Filter </button>
+                      <div class="col-md-3">
+                        <br>
+                        <button type="submit" class=" btn btn-sm btn-success mt-2 mt-sm-0 btn-icon-text">
+                          <i class="mdi mdi-checkbox-marked-circle-outline"></i> Filter </button>
+                      </div>
+
                     </div>
 
                   </div>
-
                 </div>
-              </div>
-
+              </form>
             </div>
 
             <div class="clearfix"></div>
             <div class="table-responsive">
-              <table mat-table [dataSource]="storeTransferData" matSort class="mat-elevation-z8 mat-datagrid  table-bordered w-100">
+              <table mat-table [dataSource]="storeTransferData" *ngIf="!!storeTransferData" matSort
+                class="mat-elevation-z8 mat-datagrid  table-bordered w-100">
 
                 <ng-container matColumnDef="Store_ID">
                   <th mat-header-cell *matHeaderCellDef scope="col">
@@ -112,6 +126,23 @@
                   <td mat-cell *matCellDef="let element"> {{element.Store_Name}} </td>
                 </ng-container>
 
+                <ng-container matColumnDef="Distance">
+                  <th mat-header-cell *matHeaderCellDef scope="col">
+                    <label mat-sort-header>
+                      Distance
+                    </label>
+                  </th>
+                  <td mat-cell *matCellDef="let element">
+                    <select class="form-control form-control-sm" id="exampleFormControlSelect1"
+                      [value]="element.Distance" (change)="onDistanceChange(element, $event)">
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                    </select>
+                  </td>
+                </ng-container>
+
                 <ng-container matColumnDef="Store_Store_Transferd_Config">
                   <th mat-header-cell *matHeaderCellDef scope="col">
                     <label mat-sort-header>
@@ -125,29 +156,30 @@
                       <option value="1">Yes </option>
                       <option value="0">No </option>
                     </select> -->
-                    <mat-slide-toggle [checked]="element.Store_Store_Transferd_Config==1?true:false"></mat-slide-toggle>
+                    <mat-slide-toggle (change)="onChange(element,$event)"
+                      [checked]="element.Store_Store_Transferd_Config==1?true:false"></mat-slide-toggle>
 
                   </td>
                 </ng-container>
 
-                <!-- <ng-container matColumnDef="Actions">
+                <ng-container matColumnDef="Actions">
                   <th mat-header-cell *matHeaderCellDef scope="col">
                     <label mat-sort-header>
                       Actions
                     </label>
                   </th>
                   <td mat-cell *matCellDef="let element">
-                    <span *ngIf="!element.Edit" (click)="OnStoreEdit(element)"
-                      class="btn btn-sm btn-primary d-inline-block"> Edit </span>
-                    <span *ngIf="element.Edit" (click)="OnStoreSave(element)"
-                      class="btn btn-sm btn-success d-inline-block"> Save </span>
+                    <!-- <span *ngIf="!element.Edit" (click)="OnStoreEdit(element)"
+                      class="btn btn-sm btn-primary d-inline-block"> Edit </span> -->
+                    <span (click)="onSave(element)"> <i class="fa fa-floppy-o" aria-hidden="true"></i> </span>
                   </td>
-                </ng-container> -->
+                </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
               </table>
-              <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[10, 25, 50]" aria-label="Select page">
+              <mat-paginator [pageSize]="pageSize" [hidden]="!storeTransferData" [pageSizeOptions]="[10, 25, 50]"
+                aria-label="Select page">
               </mat-paginator>
             </div>
           </div>
@@ -163,56 +195,3 @@
 </div>
 
 <!-- page-body-wrapper ends -->
-<!-- <thead>
-                    <tr>
-                      <th> Store ID</th>
-                      <th>Store Name</th>
-                     
-                      <th>Store-Store Transferd<br> Config</th>
-                      <th>Actions</th>
-                    </tr>
-                    <tr>
-                      <th> <input type="text" class="form-control form-control-sm" > </th>
-                      <th> <input type="text" class="form-control form-control-sm" > </th>
-                      <th> <input type="text" class="form-control form-control-sm" > </th>
-                      <th> <input type="text" class="form-control form-control-sm" > </th>
-                    
-                      
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                    
-                      <td>	ST1001</td>
-                      <td>ABQ Mall</td>
-                      <td> <input type="text" class="form-control form-control-sm" value="Yes"  /></td>
-                      
-                      <td> <span class="btn btn-sm btn-success d-inline-block"> Save </span></td>
-                    </tr>
-
-                    <tr>
-                    
-                      <td>ST1002</td>
-                      <td>Premium Mall</td>
-                      <td> <input type="text" class="form-control form-control-sm" value="No"  /></td>
-                      <td> <span class="btn btn-sm btn-primary d-inline-block"> Edit </span></td>
-                  </tr>
-
-                  <tr>
-                
-                    <td>ST1003</td>
-                    <td>BBQ Mall</td>
-                    <td>
-                      <select class="form-control form-control-sm" id="exampleFormControlSelect1">
-                        <option>Yes </option>
-                        <option>No </option>
-                      </select>
-                    </td> 
-                    <td> <span class="btn btn-sm btn-primary d-inline-block"> Edit </span></td>
-                </tr>
-
-                    
-                    
-
-                    
-                  </tbody> -->

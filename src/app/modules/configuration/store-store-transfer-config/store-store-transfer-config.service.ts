@@ -6,9 +6,14 @@ import { BaseHttp } from "src/app/core/services/baseHttp.service";
 })
 export class StoreToStoreTransferConfigService extends BaseHttp {
     storeTransferUrl: string = "store-transfer";
+    saveStoreTransferUrl: string = "store-transfer/save";
 
-    getStoreTransferData() {
-        return this.get<any>(this.storeTransferUrl);
+    getStoreTransferData(data: any) {
+        return this.post<any>(this.storeTransferUrl, data);
+    }
+
+    saveStoreTransfer(data: any) {
+        return this.post<any>(this.saveStoreTransferUrl, data)
     }
 
 }
