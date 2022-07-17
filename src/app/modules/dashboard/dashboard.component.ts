@@ -17,9 +17,9 @@ import { PhysicalStockCheckService } from '../transaction/physical-stock-check/p
 })
 export class DashboardComponent implements OnInit {
   displayColumnsReorder: string[] = ['Product_Name', 'Re_Order_Quantity', 'OverriderReorderQty', 'Supplier_Name', 'Actions']
-  displayColumnsPhysicalStock: string[] = ['Product', 'Store_name', 'Beginning_Stock', 'Physical_Stock_Check', 'Actions'];
+  displayColumnsPhysicalStock: string[] = ['Product', 'Store_name', 'Beginning_Stock', 'Physical_Stock_Check'];
   displayColumnsStoreTranser: string[] = ['Store_Name', 'Distance', 'Store_Store_Transferd_Config', 'Actions']
-  displayColumnsForcastConfig: string[] = ['Time_Key', 'Store_Name', 'Product_Name', 'Category_Name', 'Sales_Volume', 'Forecasted_Volume', 'P90'];
+  displayColumnsForcastConfig: string[] = ['Time_Key', 'Store_Name', 'Product_Name', 'Category_Name', 'Sales_Volume', 'Forecasted_Volume', 'NewForcastVolume'];
   processData!: MatTableDataSource<any>;
   physicalStockCheckData!: MatTableDataSource<any>;
   storeTransferData!: MatTableDataSource<any>;
@@ -32,6 +32,9 @@ export class DashboardComponent implements OnInit {
   pageSizeForcastConfig = 5;
   @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
+  isPTenValue: boolean = true;
+  isPFiftyValue: boolean = false;
+  isPNintyValue: boolean = false;
 
   constructor(public storeService: StoreService,
     public physicalStockCheckService: PhysicalStockCheckService,
@@ -44,6 +47,22 @@ export class DashboardComponent implements OnInit {
     this.getPhysicalStock();
     this.getStoreTransfer();
     this.getForcastConfig();
+    if (localStorage.getItem("isPTenValue") && localStorage.getItem("isPTenValue") == "true") {
+      this.isPTenValue = true;
+      this.isPFiftyValue = false;
+      this.isPNintyValue = false;
+    }
+    if (localStorage.getItem("isPFiftyValue") && localStorage.getItem("isPFiftyValue") == "true") {
+      this.isPTenValue = false;
+      this.isPFiftyValue = true;
+      this.isPNintyValue = false;
+    }
+    if (localStorage.getItem("isPNintyValue") && localStorage.getItem("isPNintyValue") == "true") {
+      this.isPTenValue = false;
+      this.isPFiftyValue = false;
+      this.isPNintyValue = true;
+    }
+    console.log(this.isPTenValue, this.isPFiftyValue, this.isPNintyValue)
   }
 
   getReorderData() {

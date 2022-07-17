@@ -12,6 +12,7 @@ export class SystemconfigComponent implements OnInit {
   dailyForm!: FormGroup;
   weeklyForm!: FormGroup;
   monthlyForm!: FormGroup;
+  checkvalue: boolean = true;
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -35,7 +36,25 @@ export class SystemconfigComponent implements OnInit {
     });
   }
 
-  checkall() { }
+  checkall(event: any) {
+    console.log(event.target.value)
+    let checkbox1 = document.getElementById("checkItemA") as HTMLInputElement;
+    let checkbox2 = document.getElementById("checkItemB") as HTMLInputElement;
+    let checkbox3 = document.getElementById("checkItemC") as HTMLInputElement;
+    if (event.target.value == "on" && this.checkvalue) {
+      checkbox1.checked = true;
+      checkbox2.checked = true;
+      checkbox3.checked = true;
+      this.checkvalue = !this.checkvalue;
+    } else {
+      checkbox1.checked = false;
+      checkbox2.checked = false;
+      checkbox3.checked = false;
+      this.checkvalue = !this.checkvalue;
+    }
+
+
+  }
   backButtonClick() {
     this.router.navigate(['configurations']);
   }

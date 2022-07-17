@@ -12,7 +12,7 @@ import { PhysicalStockCheckService } from './physical-stock-check.service';
 })
 export class PhysicalStockCheckComponent implements OnInit {
   physicalStockForm!: FormGroup;
-  displayColumns: string[] = ['SKU_ID', 'Product', 'Store_name', 'Beginning_Stock', 'Physical_Stock_Check', 'Actions'];
+  displayColumns: string[] = ['SKU_ID', 'Product', 'Store_name', 'Beginning_Stock', 'Physical_Stock_Check'];
   pageSize = 10;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
@@ -24,8 +24,7 @@ export class PhysicalStockCheckComponent implements OnInit {
 
   ngOnInit(): void {
     this.physicalStockForm = this.formBuilder.group({
-      storeID: [""],
-      storeName: [""],
+      storeId: [""],
       SKUCode: [''],
       productName: [''],
     });
@@ -35,7 +34,7 @@ export class PhysicalStockCheckComponent implements OnInit {
   onPhysicalStockSubmit() {
     let inputObj = {
       "Product": this.physicalStockForm.value.productName,
-      "Store_ID": this.physicalStockForm.value.storeID
+      "Store_ID": this.physicalStockForm.value.storeId
     }
     this.physicalStockCheckService.getPhysicalStockCheck(inputObj).subscribe((response) => {
       console.log(response);

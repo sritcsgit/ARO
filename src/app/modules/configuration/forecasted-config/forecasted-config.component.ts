@@ -16,14 +16,19 @@ export class ForecastedConfigComponent implements OnInit {
 
   pipe = new DatePipe('en-US');
   forecastForm!: FormGroup;
-  displayColumns: string[] = ['Time_Key', 'Store_Name', 'Product_Name', 'Category_Name', 'Sales_Volume', 'Forecasted_Volume', 'P90'];
+  displayColumns: string[] = ['Time_Key', 'Store_Name', 'Product_Name', 'Category_Name', 'Sales_Volume', 'Forecasted_Volume', 'NewForcastVolume'];
   forecastMasterData!: MatTableDataSource<any>;
   pageSize = 10;
+  isPTenValue: boolean = true;
+  isPFiftyValue: boolean = false;
+  isPNintyValue: boolean = false;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   constructor(
-    private router: Router, private formBuilder: FormBuilder, private forecastMasterService: forecastService
+    private router: Router, private formBuilder: FormBuilder, 
+    private forecastMasterService: forecastService,
+    public datepipe: DatePipe
   ) { }
 
   ngOnInit(): void {
@@ -55,11 +60,38 @@ export class ForecastedConfigComponent implements OnInit {
     }
     this.forecastMasterService.getStores(obj).subscribe((response) => {
       console.log(response);
+      for (let resp of response[0]) {
+        resp.Time_Key = this.datepipe.transform(resp.Time_Key, 'yyyy-MM-dd hh:mm:ss');
+      }
       this.forecastMasterData = new MatTableDataSource(response[0]);
       this.forecastMasterData.paginator = this.paginator;
       this.forecastMasterData.sort = this.sort;
     })
   }
 
+  onPClick(value: any) {
+    if (value == 'P10') {
+      this.isPTenValue = true;
+      this.isPFiftyValue = false;
+      this.isPNintyValue = false;
+      localStorage.setItem("isPTenValue", "true");
+      localStorage.setItem("isPFiftyValue", "false");
+      localStorage.setItem("isPNintyValue", "false");
+    } else if (value == 'P50') {
+      this.isPTenValue = false;
+      this.isPFiftyValue = true;
+      this.isPNintyValue = false;
+      localStorage.setItem("isPTenValue", "false");
+      localStorage.setItem("isPFiftyValue", "true");
+      localStorage.setItem("isPNintyValue", "false");
+    } else if (value == 'P90') {
+      this.isPTenValue = false;
+      this.isPFiftyValue = false;
+      this.isPNintyValue = true;
+      localStorage.setItem("isPTenValue", "false");
+      localStorage.setItem("isPFiftyValue", "false");
+      localStorage.setItem("isPNintyValue", "true");
+    }
+  }
 
 }

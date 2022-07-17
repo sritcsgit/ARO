@@ -85,15 +85,14 @@
                                 checked value="option1" /> &nbsp; Every </label> &nbsp;
                             <input type="text" formControlName="noOfDays" class="form-control"
                               style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;"
-                              placeholder="dd" (keypress)="onKeyPress($event)"
-                              minlength="1" maxlength="2" readonly/>
+                              placeholder="dd" (keypress)="onKeyPress($event)" minlength="1" maxlength="2" readonly />
                             Day's &nbsp;
                             <input type="time" class="form-control" formControlName="time"
-                              style="width: 150px; display: inline-block; padding: 3px 10px; height: 34px;"
-                               required/>
+                              style="width: 150px; display: inline-block; padding: 3px 10px; height: 34px;" required />
                           </div>
                         </div> <br> <br>
-                        <div class="pb-5"> <button type="submit" class="btn btn-primary " [disabled]="!dailyForm.valid"> Save </button> </div>
+                        <div class="pb-5"> <button type="submit" class="btn btn-primary " [disabled]="!dailyForm.valid">
+                            Save </button> </div>
                       </form>
                     </div>
                     <div class="tab-pane" id="tab-2" role="tabpanel">
@@ -103,48 +102,49 @@
                             <h6 style="margin-left: -20px;">
                               <span> Recur every </span> &nbsp; <input type="text" class="form-control"
                                 style="width: 50px; display: inline-block; padding: 3px 10px; height: 34px;"
-                                formControlName="date" placeholder="dd" (keypress)="onKeyPress($event)"
-                                minlength="1" maxlength="2" readonly/>
+                                formControlName="date" placeholder="dd" (keypress)="onKeyPress($event)" minlength="1"
+                                maxlength="2" readonly />
                               &nbsp; Week &nbsp;
                               <input type="time" class="form-control" formControlName="time" placeholder="hh:mm:ss"
-                                style="width: 150px; display: inline-block; padding: 3px 10px; height: 34px;" required/>
+                                style="width: 150px; display: inline-block; padding: 3px 10px; height: 34px;"
+                                required />
                             </h6>
 
                             <div class="row ">
                               <div class="col-md-3 mb-3">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
-                                    value="Sunday" required/> Sunday </label>
+                                    value="Sunday" required /> Sunday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
-                                    value="Monday" required/> Monday </label>
+                                    value="Monday" required /> Monday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
-                                    value="Tuesday" required/> Tuesday </label>
+                                    value="Tuesday" required /> Tuesday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
-                                    value="Wednessday" required/> Wednessday </label>
+                                    value="Wednessday" required /> Wednessday </label>
                               </div>
                               <div class="col-md-3 ">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
-                                    value="Thursday" required/> Thursday </label>
+                                    value="Thursday" required /> Thursday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
-                                    value="Friday" required/> Friday </label>
+                                    value="Friday" required /> Friday </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="form-check-label">
                                   <input type="radio" class="form-check-input" name="weekDay" formControlName="weekDay"
-                                    value="Saturday" required/> Saturday </label>
+                                    value="Saturday" required /> Saturday </label>
                               </div>
 
 
@@ -152,7 +152,8 @@
                             </div>
                           </div> <br> <br>
                         </div>
-                        <div class="pb-5"> <button type="submit" class="btn btn-primary mt-5"  [disabled]="!weeklyForm.valid"> Save </button> </div>
+                        <div class="pb-5"> <button type="submit" class="btn btn-primary mt-5"
+                            [disabled]="!weeklyForm.valid"> Save </button> </div>
                       </form>
                     </div>
                     <div class="tab-pane" id="tab-3" role="tabpanel">
@@ -162,19 +163,20 @@
                             <input type="radio" class="form-check-input mt-2" name="optionsRadios2" id="optionsRadios2"
                               checked value="option1" /> Day &nbsp; &nbsp;
                             <input type="number" class="form-control" formControlName="date" placeholder="dd"
-                              style="width: 60px; display: inline-block; padding: 3px 10px; height: 34px;" (keypress)="onKeyPress($event)"
-                              min="1" max="31" required/> &nbsp;
+                              style="width: 60px; display: inline-block; padding: 3px 10px; height: 34px;"
+                              (keypress)="onKeyPress($event)" min="1" max="31" required /> &nbsp;
                             <input type="time" class="form-control"
                               style="width: 150px; display: inline-block; padding: 3px 10px; height: 34px;"
-                               formControlName="time" required/>&nbsp; of
+                              formControlName="time" required />&nbsp; of
                             every &nbsp;
                             <input type="text" class="form-control" formControlName="monthCount" placeholder="mm"
-                              style="width: 60px; display: inline-block; padding: 3px 10px; height: 34px;" (keypress)="onKeyPress($event)"
-                              minlength="1" maxlength="2" readonly/>
+                              style="width: 60px; display: inline-block; padding: 3px 10px; height: 34px;"
+                              (keypress)="onKeyPress($event)" minlength="1" maxlength="2" readonly />
                             Month(s)
                           </div>
                         </div>
-                        <div class="pb-5"> <button type="submit" class="btn btn-primary mt-5" [disabled]="!monthlyForm.valid"> Save </button> </div>
+                        <div class="pb-5"> <button type="submit" class="btn btn-primary mt-5"
+                            [disabled]="!monthlyForm.valid"> Save </button> </div>
                       </form>
                     </div><br> <br>
 
@@ -207,7 +209,7 @@
               <div class="tab-pane" id="tabs-3" role="tabpanel">
                 <div class="pt-5 pl-3 pb-5">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" (click)="checkall()" id="checkAll" type="checkbox" value="option1">
+                    <input class="form-check-input" (click)="checkall($event)" id="checkAll" type="checkbox">
                     <label class="form-check-label  ml-1" for="inlineCheckbox1"> All </label>
                   </div>&nbsp; &nbsp;
                   <div class="form-check form-check-inline">
@@ -241,10 +243,10 @@
   <!-- page-body-wrapper ends -->
 </div>
 
-<script>
+<!-- <script>
   $(document).ready(function () {
     $("#checkAll").click(function () {
       $('input:checkbox').not(this).prop('checked', this.checked);
     });
   })
-</script>
+</script> -->

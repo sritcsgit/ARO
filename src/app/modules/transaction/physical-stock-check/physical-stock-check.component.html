@@ -3,7 +3,7 @@
   <div class="main-panel container">
     <div class="content-wrapper pb-0">
 
- 
+
 
       <div class="row">
         <div class="header-right mt-md-2 mt-lg-0 w-100">
@@ -15,8 +15,9 @@
               <p class="m-0">Physical Stock Check</p>
             </a>
           </div>
-          <div class=""  style="display: inline-block;  float: right;">
-            <button type="button" (click)="backButtonClick()" class=" btn btn-sm btn-success btn-icon-text" style="height:30px">
+          <div class="" style="display: inline-block;  float: right;">
+            <button type="button" (click)="backButtonClick()" class=" btn btn-sm btn-success btn-icon-text"
+              style="height:30px">
               <i class="mdi mdi-arrow-left"></i> Back</button>
           </div>
         </div>
@@ -39,24 +40,33 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-md-3">
+                      <!-- <div class="col-md-3">
                         <div class="form-group">
                           <label for="exampleFormControlSelect3">Store ID</label>
                           <input type="text" class="form-control form-control-sm" placeholder="Store ID"
                             aria-label="storeID" formControlName="storeID" />
+                          <select class="form-control form-control-sm" id="exampleFormControlSelect1"
+                            formControlName="storeID">
+                            <option>1 </option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+
+                          </select>
+
                         </div>
-                      </div>
+                      </div> -->
 
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="exampleFormControlSelect3">Store Name</label>
                           <select class="form-control form-control-sm" id="exampleFormControlSelect1"
-                            formControlName="storeName">
-                            <option>Store Name </option>
-                            <option>Store Name1 </option>
-                            <option>Store Name2</option>
-                            <option>Store Name3</option>
-
+                            formControlName="storeId">
+                            <option value="1"> Electonic Store</option>
+                            <option value="2"> Home Entertainment Store</option>
+                            <option value="3"> Hatta Electronic Showroom</option>
+                            <option value="4"> TV showroom</option>
+                            <option value="5"> Jebel Electronic Showroom</option>
                           </select>
                         </div>
                       </div>
@@ -72,8 +82,29 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="exampleFormControlSelect3">Product Name</label>
-                          <input type="text" class="form-control form-control-sm" placeholder="Product Name"
-                            aria-label="productName" formControlName="productName" />
+                          <select class="form-control form-control-sm" formControlName="productName">
+                            <option value="Zoggs Junior Character Batman Goggle Yellow/Black">Zoggs Junior Character
+                              Batman Goggle Yellow/Black</option>
+                            <option value="Legami Beach Towel - Panda">Legami Beach Towel - Panda</option>
+                            <option value="Sunny Life Swimming Cap Unicorn">Sunny Life Swimming Cap Unicorn</option>
+                            <option value="Just Nature Yoga Block (3 x 6 x 9 inch) - Blue">Just Nature Yoga Block (3 x 6
+                              x 9 inch) - Blue</option>
+                            <option value="Calm Club Sleep Well Relaxation Kit">Calm Club Sleep Well Relaxation Kit
+                            </option>
+                            <option value="Just Nature Double Layer Yoga Mat - Pink/Blue">Just Nature Double Layer Yoga
+                              Mat - Pink/Blue</option>
+                            <option value="Viewsonic M1+ G2 Smart LED Portable Projector">Viewsonic M1+ G2 Smart LED
+                              Portable Projector</option>
+                            <option value="Philips GoPix 1 Mobile Projector">Philips GoPix 1 Mobile Projector</option>
+                            <option value="Nebula Cosmos 4K Laser Projector">Nebula Cosmos 4K Laser Projector</option>
+                            <option value="Sony X85J 55 Inch TV">Sony X85J 55 Inch TV</option>
+                            <option value="SANSUI ES32T1H, 32 - inch HD 720P LED TV ">SANSUI ES32T1H, 32 - inch HD 720P
+                              LED TV </option>
+                            <option value="SAMSUNG 40-inch Class LED Smart FHD TV 1080P">SAMSUNG 40-inch Class LED Smart
+                              FHD TV 1080P</option>
+                          </select>
+                          <!-- <input type="text" class="form-control form-control-sm" placeholder="Product Name"
+                            aria-label="productName" formControlName="productName" /> -->
                         </div>
                       </div>
 
@@ -144,7 +175,7 @@
                   </td>
                 </ng-container>
 
-                <ng-container matColumnDef="Actions">
+                <!-- <ng-container matColumnDef="Actions">
                   <th mat-header-cell *matHeaderCellDef style="width: 50px;" scope="col">
                     <label>
                       Actions
@@ -157,7 +188,7 @@
                       <i class="fa fa-floppy-o" aria-hidden="true"></i>
                     </span>
                   </td>
-                </ng-container>
+                </ng-container> -->
 
                 <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
