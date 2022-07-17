@@ -17,6 +17,7 @@ export class PhysicalStockCheckComponent implements OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   physicalStockCheckData!: MatTableDataSource<any>;
+  router: any;
 
   constructor(private formBuilder: FormBuilder,
     private physicalStockCheckService: PhysicalStockCheckService) { }
@@ -29,6 +30,7 @@ export class PhysicalStockCheckComponent implements OnInit {
       productName: [''],
     });
   }
+  
 
   onPhysicalStockSubmit() {
     let inputObj = {
@@ -41,6 +43,9 @@ export class PhysicalStockCheckComponent implements OnInit {
       this.physicalStockCheckData.paginator = this.paginator;
       this.physicalStockCheckData.sort = this.sort;
     })
+  }
+  backButtonClick(){
+    this.router.navigate(['transaction']);
   }
 
 }

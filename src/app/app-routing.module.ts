@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'process', component: ProcessComponent },
   { path: 'admin', component: AdminComponent },
-  // { path: 'transaction', component: TransactionComponent },
+  { path: 'transaction', component: TransactionComponent },
   // { path: 'pricemarkdown', component: PriceMarkdownComponent },
   // { path: 'phaseoutitem', component: PhaseOutItemsComponent },
   // { path: 'newlauchitem', component: NewItemLaunchDateComponent },

@@ -33,8 +33,8 @@ body, .mat-table {
   .h6 {
     font-size: .9375rem; }
   
-  p, label {
-    font-size: 14px;
+  p, label, td.mat-cell {
+    font-size: 12px;
     line-height: 1.5; }
 
 .main-layout {
@@ -115,4 +115,6 @@ td.mat-cell { padding: 5px 10px !important;}
 
 
 
-.landing-page-table-head h6{ background-color: #f3f6f9; padding: 10px;}
+.landing-page-table-head h6{ background-color: #f3f6f9; padding: 10px; margin-bottom: 0px;}
+.w-75px { width: 75px;}
+.filter-table-data .form-control {font-size: 12px; padding: 5px;}
