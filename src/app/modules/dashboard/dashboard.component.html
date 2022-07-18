@@ -60,7 +60,7 @@
                     <table mat-table [dataSource]="processData" *ngIf="!!processData" matSort
                       class="mat-datagrid w-100 table-bordered">
                       <ng-container matColumnDef="Product_Name">
-                        <th mat-header-cell *matHeaderCellDef style="width: 120px; " scope="col">
+                        <th mat-header-cell *matHeaderCellDef style="width: 200px; " scope="col">
                           <label mat-sort-header>
                             Product Name
                           </label>
@@ -111,7 +111,7 @@
                       </ng-container> -->
 
                       <ng-container matColumnDef="Supplier_Name">
-                        <th class="w-75px" mat-header-cell *matHeaderCellDef scope="col">
+                        <th class="w-75px" style="width: 50px;" mat-header-cell *matHeaderCellDef scope="col">
                           <label mat-sort-header>
                             Supplier Name
                           </label>
@@ -174,7 +174,7 @@
                       </ng-container>
 
                       <ng-container matColumnDef="Store_name">
-                        <th mat-header-cell *matHeaderCellDef scope="col">
+                        <th mat-header-cell *matHeaderCellDef scope="col" style="width: 120px;">
                           <label mat-sort-header>
                             Store Name
                           </label>
