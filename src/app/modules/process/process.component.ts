@@ -21,9 +21,11 @@ export class ProcessComponent implements OnInit {
   pageSize = 10;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
-
+  minDate = new Date();
+  storeNameList: any;
   constructor(private http: HttpClient, private storeService: StoreService,
     private formBuilder: FormBuilder) { }
+
   ngOnInit(): void {
     this.processForm = this.formBuilder.group({
       date: [""],
@@ -34,18 +36,18 @@ export class ProcessComponent implements OnInit {
       ProductName: [''],
       SKU_CODE: ['']
     });
+    this.getStoresNamesList();
+  }
+
+  getStoresNamesList() {
+    this.storeService.getStoreNames().subscribe((response) => {
+      console.log(response);
+      this.storeNameList = response[0];
+    });
+
   }
   onSubmit() {
     console.log(this.processForm.value);
-    // let obj = {
-    //   "Date": this.ngform.value.date,
-    //   "Store_Name": this.ngform.value.storeName,
-    //   "Product_Categories": this.ngform.value.ProductCateg,
-    //   "Sub_Categories": this.ngform.value.SubCategories,
-    //   "ABC_Class": this.ngform.value.abcClass,
-    //   "Product_Name": this.ngform.value.ProductName,
-    //   "SKU_CODE": this.ngform.value.SKU_CODE
-    // }
     let obj = {
       "Date": this.processForm.value.date,
       "Category_Name": this.processForm.value.ProductCateg,
@@ -71,11 +73,6 @@ export class ProcessComponent implements OnInit {
 
   onProdSave(product: any) {
     const myFormattedDate = this.pipe.transform(product.Time_key, 'yyyy-MM-dd');
-    // let prodObj = {
-    //   "Date": myFormattedDate,
-    //   "Override_RQ": this.overrideReorder
-    // };
-
     let prodObj = {
       "Time_Key": myFormattedDate,
       "Store_Key": product.Store_Key,

@@ -17,6 +17,10 @@ import { PosSaleComponent } from './pos-sale/pos-sale.component';
 import { PhysicalStockCheckComponent } from './physical-stock-check/physical-stock-check.component';
 import { NewItemLaunchDateComponent } from './new-item-launch-date/new-item-launch-date.component';
 import { PhysicalStockCheckService } from './physical-stock-check/physical-stock-check.service';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { PhysicalStockCheckService } from './physical-stock-check/physical-stock
     MatSortModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers:[PhysicalStockCheckService]
+  providers: [PhysicalStockCheckService]
 })
 export class TransactionModule { }
