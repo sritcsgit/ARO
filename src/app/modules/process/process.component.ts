@@ -14,7 +14,7 @@ import { MatSort } from '@angular/material/sort';
 })
 export class ProcessComponent implements OnInit {
   processForm!: FormGroup;
-  displayColumns: string[] = ['Product_Name', 'SKU_ID', 'Re_Order_Quantity', 'OverriderReorderQty', 'Expected_delivary_Date', 'Supplier_Name', 'Actions']
+  displayColumns: string[] = ['Store_Name', 'Product_Name', 'SKU_ID', 'Re_Order_Quantity', 'OverriderReorderQty', 'Expected_delivary_Date', 'Supplier_Name', 'Actions']
   processData!: MatTableDataSource<any>;
   overrideReorder!: any;
   pipe = new DatePipe('en-US');
@@ -42,19 +42,21 @@ export class ProcessComponent implements OnInit {
   getStoresNamesList() {
     this.storeService.getStoreNames().subscribe((response) => {
       console.log(response);
-      this.storeNameList = response[0];
+      this.storeNameList = response;
     });
 
   }
   onSubmit() {
     console.log(this.processForm.value);
     let obj = {
-      "Date": this.processForm.value.date,
+      "Date": this.pipe.transform(this.processForm.value.date, 'yyyy-MM-dd'),
+      "Store_Name": this.processForm.value.storeName,
       "Category_Name": this.processForm.value.ProductCateg,
       "Subcategory_Name": this.processForm.value.SubCategories,
       "Product_Name": this.processForm.value.ProductName,
       "SKU_ID": this.processForm.value.SKU_CODE
     }
+    console.log(obj)
     this.storeService.searchStores(obj).subscribe((response) => {
       for (let prod of response[0]) {
         prod.editMode = false;
